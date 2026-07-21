@@ -1,0 +1,160 @@
+<title>Checklist LKPS - DKV ISBI Tanah Papua</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root{
+    --bg:#f7f7f9; --card:#fff; --text:#1a1a1a; --muted:#6b7280; --border:#e5e7eb;
+    --done:#16a34a; --done-bg:#dcfce7;
+    --partial:#d97706; --partial-bg:#fef3c7;
+    --empty:#dc2626; --empty-bg:#fee2e2;
+    --na:#6b7280; --na-bg:#f3f4f6;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --bg:#15161a; --card:#1e2025; --text:#e8e8ea; --muted:#9aa0aa; --border:#31333a;
+      --done-bg:#0f2e1c; --partial-bg:#3a2a0a; --empty-bg:#3a1414; --na-bg:#26282e; }
+  }
+  :root[data-theme="dark"]{ --bg:#15161a; --card:#1e2025; --text:#e8e8ea; --muted:#9aa0aa; --border:#31333a;
+    --done-bg:#0f2e1c; --partial-bg:#3a2a0a; --empty-bg:#3a1414; --na-bg:#26282e; }
+  :root[data-theme="light"]{
+    --bg:#f7f7f9; --card:#fff; --text:#1a1a1a; --muted:#6b7280; --border:#e5e7eb;
+    --done-bg:#dcfce7; --partial-bg:#fef3c7; --empty-bg:#fee2e2; --na-bg:#f3f4f6;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.45}
+  .wrap{max-width:1100px;margin:0 auto;padding:28px 20px 60px}
+  h1{font-size:1.4rem;margin:0 0 4px}
+  .sub{color:var(--muted);font-size:.9rem;margin:0 0 20px}
+  .summary{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:22px}
+  .stat{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:10px 16px;min-width:110px}
+  .stat b{display:block;font-size:1.3rem}
+  .stat.done b{color:var(--done)} .stat.partial b{color:var(--partial)} .stat.empty b{color:var(--empty)} .stat.na b{color:var(--na)}
+  .filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+  .filters button{border:1px solid var(--border);background:var(--card);color:var(--text);border-radius:999px;
+    padding:6px 14px;font-size:.82rem;cursor:pointer}
+  .filters button.active{background:var(--text);color:var(--bg);border-color:var(--text)}
+  table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--border);border-radius:10px;overflow:hidden}
+  thead th{text-align:left;font-size:.78rem;text-transform:uppercase;letter-spacing:.03em;color:var(--muted);
+    padding:10px 12px;border-bottom:1px solid var(--border)}
+  tbody td{padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;font-size:.9rem}
+  tbody tr:last-child td{border-bottom:none}
+  tbody tr.hidden{display:none}
+  .no{color:var(--muted);font-variant-numeric:tabular-nums;white-space:nowrap}
+  .badge{display:inline-block;padding:2px 10px;border-radius:999px;font-size:.76rem;font-weight:600;white-space:nowrap}
+  .badge.done{background:var(--done-bg);color:var(--done)}
+  .badge.partial{background:var(--partial-bg);color:var(--partial)}
+  .badge.empty{background:var(--empty-bg);color:var(--empty)}
+  .badge.na{background:var(--na-bg);color:var(--na)}
+  .note{color:var(--muted);font-size:.83rem}
+  .chk{width:18px;height:18px;cursor:pointer}
+  .wajib{font-size:.72rem;color:var(--muted)}
+  a{color:inherit}
+  footer{margin-top:22px;color:var(--muted);font-size:.78rem}
+</style>
+
+<div class="wrap">
+  <h1>Checklist LKPS - DKV ISBI Tanah Papua</h1>
+  <p class="sub">Lampiran 4b PerBAN-PT 36/2025 (IAPS 5.1) &middot; status pengisian per tabel &middot; centang tersimpan otomatis di browser ini</p>
+
+  <div class="summary" id="summary"></div>
+
+  <div class="filters" id="filters">
+    <button data-f="all" class="active">Semua</button>
+    <button data-f="done">Terisi</button>
+    <button data-f="partial">Sebagian</button>
+    <button data-f="empty">Kosong</button>
+    <button data-f="na">Tidak berlaku</button>
+  </div>
+
+  <table>
+    <thead>
+      <tr><th>&#10003;</th><th>No</th><th>Tabel</th><th>Status</th><th>Catatan</th></tr>
+    </thead>
+    <tbody id="rows"></tbody>
+  </table>
+
+  <footer>Dibuat manual berdasarkan progres pengisian LKPS sampai 2026-07-21. Bukan pengganti verifikasi resmi prodi.</footer>
+</div>
+
+<script>
+const DATA = [
+  ["1-I.1","Dosen Penghitung Rasio (DPR)","partial",
+    "12 DPR resmi (PD Dikti): 11 terisi (data lengkap/sebagian dari LKD+Scholar), 1 (Akkas) belum ada data. Luaran jurnal 4 dosen baru sudah diupload ke Drive tapi belum ditautkan hyperlink di dokumen."],
+  ["1-I.2","Dosen Tidak Tetap","empty","Belum ada data terkumpul."],
+  ["1-I.3","Dosen Praktisi","na","Gugur untuk Prodi Sarjana - tabel ini untuk D1/D2/D3/D4/Sarjana Terapan/Profesi 1 tahun."],
+  ["1-I.4","EWMP DPR (Ekuivalen Waktu Mengajar Penuh)","empty",
+    "Sengaja belum diisi - ekstraksi sks dari LKD menghasilkan angka tidak valid (bercampur fragmen tanggal SK). Perlu hitung manual per dosen."],
+  ["1-I.5","Tenaga Kependidikan","empty","Belum ada data terkumpul."],
+  ["1-I.6","Pembiayaan Operasional dan Investasi","done","Sudah terisi lengkap di dokumen live (angka TS-2/TS-1/TS + rata-rata)."],
+  ["1-I.6.1","Pemenuhan Beban Belajar di Luar Prodi (MBKM)","partial",
+    "2 baris terisi (KKN Desa, Kerja Praktek Mitra Industri). Belum ada kode eviden yang memetakan ke tabel ini - gap yang belum ditutup."],
+  ["1-I.7","Profil Jumlah Lulusan","partial","Baris jumlah lulusan TS-2/TS-1/TS terisi (4/1/3); persentase penurunan belum dihitung."],
+  ["1-I.8a","Masa Studi - Profesi/Diploma Satu","na","Gugur - prodi ini Sarjana, bukan Profesi/D1."],
+  ["1-I.8b","Masa Studi - Diploma Dua/Magister","na","Gugur - tidak relevan untuk Prodi Sarjana."],
+  ["1-I.8c","Masa Studi - Diploma Tiga/Doktor","na","Gugur - tidak relevan untuk Prodi Sarjana."],
+  ["1-I.8d","Masa Studi Lulusan - Sarjana","partial","Baris TS-7 terisi (21 diterima, 5 lulusan); TS-6 s.d TS-3 masih kosong."],
+  ["1-I.9","Pengukuran Capaian Pembelajaran Lulusan (CPL)","empty","Belum ada data terkumpul."],
+  ["1-I.10","Kepuasan Pengguna Lulusan","empty","Belum ada data terkumpul (perlu tracer study)."],
+  ["1-I.11","Tren Mahasiswa Baru","empty","Belum ada data terkumpul."],
+  ["1-I.12","Prestasi Mahasiswa","empty","Belum ada data terkumpul."],
+  ["1-I.13","Waktu Tunggu Lulusan","empty","Belum ada data terkumpul (perlu tracer study)."],
+  ["1-I.14","Pengakuan Kompetensi Lulusan","empty","Belum ada data terkumpul."],
+  ["1-II.1","Penelitian DPRPS yang Melibatkan Mahasiswa","partial",
+    "7 entri sudah disusun (dari eviden RL-03 + LKD) tapi baru di file lokal/tempel - belum ditempel ke dokumen live."],
+  ["1-II.2","Publikasi Ilmiah DPRPS","empty",
+    "Sengaja belum diisi - perlu verifikasi tier SINTA/jenis jurnal per artikel dulu sebelum diklasifikasi ke tabel (nasional/internasional/bereputasi)."],
+  ["1-II.3","Luaran Lainnya (HKI, Karya Seni, Buku)","partial",
+    "8 HKI Hak Cipta sudah disusun (NB=8) tapi baru di file lokal - belum ditempel ke dokumen live. Ditemukan 1 HKI tambahan (Nekay Puppet, 2023) yang perlu diverifikasi sertifikatnya."],
+  ["1-II.4","Rekognisi DPRPS","partial","1 entri (Tindia) sudah disusun tapi baru di file lokal - belum ditempel ke dokumen live."],
+  ["1-II.5","Penelitian Rujukan Tesis/Disertasi","na","Gugur - hanya untuk pengusul Magister/Doktor, prodi ini Sarjana."],
+  ["1-II.6","Karya Ilmiah DPRPS yang Disitasi","na","Gugur - hanya untuk pengusul Magister/Doktor, prodi ini Sarjana."],
+  ["2.1","Kepuasan Stakeholder Internal &amp; Eksternal","empty","Belum ada data terkumpul."],
+  ["3.1","Rekognisi Program Studi","empty","Belum ada data terkumpul."]
+];
+
+const rowsEl = document.getElementById("rows");
+const STATUS_LABEL = {done:"Terisi", partial:"Sebagian", empty:"Kosong", na:"Tidak berlaku"};
+const KEY = "lkps-checklist-v1";
+let saved = {};
+try { saved = JSON.parse(localStorage.getItem(KEY) || "{}"); } catch(e) {}
+
+DATA.forEach(([no, nama, status, catatan], i) => {
+  const tr = document.createElement("tr");
+  tr.dataset.status = status;
+  const checked = saved[no] !== undefined ? saved[no] : (status === "done");
+  tr.innerHTML = `
+    <td><input type="checkbox" class="chk" data-no="${no}" ${checked ? "checked" : ""}></td>
+    <td class="no">${no}</td>
+    <td>${nama}</td>
+    <td><span class="badge ${status}">${STATUS_LABEL[status]}</span></td>
+    <td class="note">${catatan}</td>`;
+  rowsEl.appendChild(tr);
+});
+
+rowsEl.addEventListener("change", e => {
+  if (!e.target.classList.contains("chk")) return;
+  saved[e.target.dataset.no] = e.target.checked;
+  localStorage.setItem(KEY, JSON.stringify(saved));
+});
+
+function renderSummary(){
+  const counts = {done:0, partial:0, empty:0, na:0};
+  DATA.forEach(([,,status]) => counts[status]++);
+  const box = document.getElementById("summary");
+  box.innerHTML = `
+    <div class="stat done"><b>${counts.done}</b>Terisi</div>
+    <div class="stat partial"><b>${counts.partial}</b>Sebagian</div>
+    <div class="stat empty"><b>${counts.empty}</b>Kosong</div>
+    <div class="stat na"><b>${counts.na}</b>Tidak berlaku</div>`;
+}
+renderSummary();
+
+document.getElementById("filters").addEventListener("click", e => {
+  const btn = e.target.closest("button");
+  if (!btn) return;
+  document.querySelectorAll("#filters button").forEach(b => b.classList.remove("active"));
+  btn.classList.add("active");
+  const f = btn.dataset.f;
+  document.querySelectorAll("#rows tr").forEach(tr => {
+    tr.classList.toggle("hidden", f !== "all" && tr.dataset.status !== f);
+  });
+});
+</script>
