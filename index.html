@@ -79,61 +79,69 @@
     <tbody id="discRows"></tbody>
   </table>
 
-  <footer>Dibuat manual berdasarkan progres pengisian LKPS sampai 2026-07-23 (v14). Bukan pengganti verifikasi resmi prodi.</footer>
+  <footer>Dibuat manual berdasarkan progres pengisian LKPS sampai 2026-07-27 (v20). Bukan pengganti verifikasi resmi prodi.</footer>
 </div>
 
 <script>
 const DATA = [
   ["1-I.1","Dosen Penghitung Rasio (DPR)","partial",
-    "Draft lokal (v13): 11/12 dosen resmi PD Dikti terisi lengkap (data + hyperlink Luaran DPR, termasuk Daniel dgn 2 artikel: JAITI + Idealis Sinta 3). 1 (Akkas) masih nol data. BELUM disinkron ke dokumen live (yang baru punya 5 dosen: Tindia/Syafiuddin/Hence/Daniel/Kelana). Discrepancy: Daniel Sande Bona &amp; Kelana Vhisnu Nugroho tidak ada di 12 nama resmi PD Dikti - perlu klarifikasi prodi, belum ditindaklanjuti."],
-  ["1-I.2","Dosen Tidak Tetap","empty","Belum ada data terkumpul."],
+    "12 nama resmi DPR terkonfirmasi (screenshot prodi, cocok dgn Data LKPS DKV.xlsx): Hence, Yanes Koyari, Tindia, Retnoning, M. Ilham, Kadek Indra Wijaya, Sarah Sabrina, Bayu Aji Suseno, Ida Bagus Gede Surya Peradantha, Akkas, Syafiuddin, Putri Prabu Utami. Kolom Sertifikat Pendidik Profesional (Serdos) semua 'TIDAK ADA' - benar, ini bukan kolom sertifikat kompetensi umum. Daniel &amp; Kelana TIDAK termasuk 12 nama ini - statusnya di luar tabel DPR."],
+  ["1-I.2","Dosen Tidak Tetap","done",
+    "Kadek Indra Wijaya (S3, Etnomusikologi) &amp; Akkas (S2, Seni Lukis) terisi (v16). Kadek: kolom Luaran di-hyperlink ke 3 artikel jurnal asli + 2 HAKI resmi (v18)."],
   ["1-I.3","Dosen Praktisi","na","Gugur untuk Prodi Sarjana - tabel ini untuk D1/D2/D3/D4/Sarjana Terapan/Profesi 1 tahun."],
-  ["1-I.4","EWMP DPR (Ekuivalen Waktu Mengajar Penuh)","empty",
-    "Sengaja belum diisi - ekstraksi sks dari LKD menghasilkan angka tidak valid (bercampur fragmen tanggal SK). Perlu hitung manual per dosen."],
+  ["1-I.4","EWMP DPR (Ekuivalen Waktu Mengajar Penuh)","partial",
+    "8 dari 12 DPR terisi (v20) dari data resmi &quot;C. Kesimpulan Kinerja Dosen&quot; di LKD TA 2024/2025 Ganjil+Genap (angka final SISTER Kemdiktisaintek, bukan hasil parsing tabel per-matkul). PERLU KONFIRMASI PRODI (lihat tabel discrepancy): (1) asumsi TS = TA 2024/2025, (2) split kolom Pendidikan (PS diakreditasi/PS lain/Luar PT) untuk 5 dosen non-homebase DKV cuma asumsi konservatif, (3) M. Ilham cuma ada LKD Ganjil (Genap hilang), (4) Retnoning &amp; Ida Bagus Gede Surya Peradantha belum ada LKD sama sekali di Drive."],
   ["1-I.5","Tenaga Kependidikan","done",
-    "Disinkron dari dokumen live ke draft lokal (v14): 5 posisi (Pustakawan, Laboran, Teknisi/Analis/Operator, Programer, Administrasi) - kualifikasi pendidikan (S-1/S-2) + jumlah &quot;1 (Ijazah dan Sertifikat)&quot; terisi lengkap."],
-  ["1-I.6","Pembiayaan Operasional dan Investasi","done","Terisi lengkap di dokumen live (angka TS-2/TS-1/TS + rata-rata)."],
+    "5 posisi (Pustakawan, Laboran, Teknisi/Analis/Operator, Programer, Administrasi) - kualifikasi pendidikan + jumlah &quot;1 (Ijazah dan Sertifikat)&quot; terisi lengkap."],
+  ["1-I.6","Pembiayaan Operasional dan Investasi","done","Terisi lengkap (angka TS-2/TS-1/TS + rata-rata)."],
   ["1-I.6.1","Pemenuhan Beban Belajar di Luar Prodi (MBKM)","done",
-    "2 baris (KKN Desa, Kerja Praktek Mitra Industri) + bukti pendukung (SK KKN DAN LAPORAN KKN, KERJA PRAKTEK) + persentase penurunan 25% - disinkron ke draft lokal v14."],
+    "2 baris (KKN Desa, Kerja Praktek Mitra Industri) + bukti pendukung + persentase penurunan 25%."],
   ["1-I.7","Profil Jumlah Lulusan","partial",
-    "Terisi di live doc: TS-2/TS-1/TS = 4/1/3; persentase penurunan belum dihitung. Discrepancy: beda dengan angka 'Jumlah lulusan' di Tabel 1-I.13 untuk tahun yang sama (lihat tabel discrepancy di bawah)."],
+    "TS-2/TS-1/TS terisi, cocok dgn Data LKPS DKV.xlsx resmi. PERLU KONFIRMASI: nama-per-nama dari SK Yudisium 2018-2025 (dibaca &amp; di-OCR penuh) memberi hitungan lulusan DKV per tahun yang TIDAK COCOK dgn angka resmi ini (lihat tabel discrepancy - ini temuan baru, belum ada di versi sebelumnya)."],
   ["1-I.8a","Masa Studi - Profesi/Diploma Satu","na","Gugur - prodi ini Sarjana, bukan Profesi/D1."],
   ["1-I.8b","Masa Studi - Diploma Dua/Magister","na","Gugur - tidak relevan untuk Prodi Sarjana."],
   ["1-I.8c","Masa Studi - Diploma Tiga/Doktor","na","Gugur - tidak relevan untuk Prodi Sarjana."],
   ["1-I.8d","Masa Studi Lulusan - Sarjana","done",
-    "TS-7 s.d TS-3 lengkap (24/3/3/0, 21/5/5/0, 11/0/0/0, 8/1/0/1, 15/0/0/0), cocok persis dengan dokumen live. Bug struktur (tabel header &amp; tabel data kepisah jadi 2 <code>&lt;w:tbl&gt;</code> beda, celah kosong besar) sudah diperbaiki di v12 - digabung jadi 1 tabel 8 baris mengikuti pola Tabel 1-I.8c."],
-  ["1-I.9","Pengukuran Capaian Pembelajaran Lulusan (CPL)","empty","Belum ada data terkumpul."],
-  ["1-I.10","Kepuasan Pengguna Lulusan","empty","Belum ada data terkumpul (perlu tracer study)."],
-  ["1-I.11","Tren Mahasiswa Baru","done","Terisi lengkap di dokumen live: 11/19/13, persentase -20,57%. Sempat kelewat di draft lokal - sudah disinkron ke v14."],
+    "TS-7 s.d TS-3 lengkap (24/3/3/0, 21/5/5/0, 11/0/0/0, 8/1/0/1, 15/0/0/0), cocok persis dgn Data LKPS DKV.xlsx resmi."],
+  ["1-I.9","Pengukuran Capaian Pembelajaran Lulusan (CPL)","empty","Belum ada data terkumpul. Ada dokumen CPL pendukung di D:\\Akreditasi\\CPL (matriks, dokumen 5 &amp; 6) - belum dipetakan ke tabel ini."],
+  ["1-I.10","Kepuasan Pengguna Lulusan","empty","Belum ada data terkumpul (perlu tracer study dari sisi pengguna/employer, beda dari tracer alumni)."],
+  ["1-I.11","Tren Mahasiswa Baru","done","11/19/13, persentase -20,57%."],
   ["1-I.12","Prestasi Mahasiswa","done",
-    "11 baris ditarik dari dokumen live ke draft lokal (v13): Bakar Batu, 3 karya HKI Buku (nasional), 7 karya mahasiswa (wilayah/nasional) dengan hyperlink bukti. Catatan: 7 judul karya mahasiswa di sini identik dengan judul di draft Tabel 1-II.1 - kemungkinan disengaja (beda indikator: 14A vs 18A), belum dikonfirmasi ke prodi bukan double-counting keliru."],
-  ["1-I.13","Waktu Tunggu Lulusan","partial",
-    "Kolom 'Jumlah lulusan' kini lengkap 5 baris TS-4 s.d TS = 9/1/3/1/2 (disinkron dari dokumen live ke v14, sebelumnya draft lokal cuma 3 baris TS-4 s.d TS-2). Kolom lain (terlacak/rata-rata/kesesuaian) baru terisi untuk TS-3 dari tracer study (n=2); TS-1 &amp; TS belum ada data tracer study (kosong juga di live). Discrepancy BELUM SELESAI: 'Jumlah lulusan' TS-3 resmi = 1, tapi 'Jumlah lulusan yang terlacak' = 2 - kontradiksi logis (terlacak tidak mungkin &gt; total). User sempat diminta pilih 1 dari 2 responden tapi menahan keputusan ('jangan diganti dulu') - menunggu kepastian data dari Sapto/prodi."],
-  ["1-I.14","Pengakuan Kompetensi Lulusan","empty","Belum ada data terkumpul."],
+    "12 baris termasuk Miki Wuka (Pendanaan Dana Abadi Kebudayaan 2025, ditambahkan v16). Catatan lama: 7 judul karya mahasiswa identik dgn draft Tabel 1-II.1 - kemungkinan disengaja (beda indikator 14A vs 18A), belum dikonfirmasi ke prodi."],
+  ["1-I.13","Waktu Tunggu Lulusan","done",
+    "Resync penuh dari live doc (v17): 6 baris TS-5 s.d TS (7/0/0/0, 1/0/0/0, 3/2/1/100, 0/0/0/0, 0/0/0/0, 0/0/0/0) - cocok persis dgn Data LKPS DKV.xlsx resmi, TIDAK ADA lagi kontradiksi lulusan-vs-terlacak (revert dari patch keliru Antigravity/Gemini yang sempat ubah angka tanpa dasar data terbaru). PERLU KONFIRMASI: temuan SK Yudisium baru (lihat 1-I.7) berpotensi mempengaruhi tabel ini juga."],
+  ["1-I.14","Pengakuan Kompetensi Lulusan","done","Miki Wuka (Kementerian Kebudayaan RI 2025) &amp; Hamzah Zaeni (Disbudpar Papua 2022) ditambahkan v16."],
   ["1-II.1","Penelitian DPRPS yang Melibatkan Mahasiswa","partial",
-    "7 entri tersusun lengkap + hyperlink ke 7 bukti PDF jurnal mahasiswa (isi tiap PDF sudah diverifikasi, bukan cuma nama file) - baru di draft lokal, belum ditempel ke dokumen live."],
+    "7 entri tersusun lengkap + hyperlink ke 7 bukti PDF jurnal mahasiswa (isi tiap PDF sudah diverifikasi) - baru di draft lokal, belum ditempel ke dokumen live."],
   ["1-II.2","Publikasi Ilmiah DPRPS","partial",
-    "Riset selesai (4 agent paralel, verifikasi SINTA/Scopus per jurnal): 29 judul unik 2024-2026 - 5 nasional tidak terakreditasi, 18 nasional terakreditasi (termasuk 3 luaran PkM yang tetap dihitung sesuai keputusan user: akreditasi jurnal yang jadi patokan, bukan jenis isi artikel), 2 internasional bereputasi (Scopus/WoS), 3 seminar nasional + 1 seminar internasional (4 prosiding yang awalnya disangka jurnal, dimasukkan ke baris seminar sesuai keputusan user). Sudah terisi di draft lokal (v11+), belum ditempel ke dokumen live. Flag: 5 artikel 'nasional tidak terakreditasi' semuanya terbit di Jurnal Melanesia Visual Art (JMVA) - ISSN jurnal ini masih placeholder 'XXXX-XXXX' di web resmi, belum terdaftar resmi ke ISSN International Centre (lihat tabel discrepancy)."],
+    "29 judul unik 2024-2026 - 5 nasional tidak terakreditasi, 18 nasional terakreditasi, 2 internasional bereputasi, 3 seminar nasional + 1 seminar internasional. Baru di draft lokal, belum ditempel ke dokumen live. Flag: 5 artikel di Jurnal Melanesia Visual Art (JMVA) - ISSN masih placeholder, belum terdaftar resmi."],
   ["1-II.3","Luaran Lainnya (HKI, Karya Seni, Buku)","partial",
     "8 HKI Hak Cipta tersusun (NB=8) - baru di draft lokal, belum ditempel ke dokumen live."],
-  ["1-II.4","Rekognisi DPRPS","partial","1 entri (Tindia) tersusun - baru di draft lokal, belum ditempel ke dokumen live."],
+  ["1-II.4","Rekognisi DPRPS","done",
+    "8 entri (v19): 1 Tindia + 7 Hence (juri FLS2N, juri Maskot/Jingle KPU Papua, juri FLS3N, juri komik SMAN4, narasumber workshop fotografi, juri ilustrator &amp; juri mewarnai Balai Bahasa Papua) - semua di-OCR &amp; verifikasi isi dokumen dulu, bukan cuma nama folder."],
   ["1-II.5","Penelitian Rujukan Tesis/Disertasi","na","Gugur - hanya untuk pengusul Magister/Doktor, prodi ini Sarjana."],
   ["1-II.6","Karya Ilmiah DPRPS yang Disitasi","na","Gugur - hanya untuk pengusul Magister/Doktor, prodi ini Sarjana."],
   ["2.1","Kepuasan Stakeholder Internal &amp; Eksternal","empty","Belum ada data terkumpul."],
-  ["3.1","Rekognisi Program Studi","empty","Belum ada data terkumpul."]
+  ["3.1","Rekognisi Program Studi","done",
+    "10 entri kerjasama MoA/IA (v15): IDB Bali, ISI Yogyakarta, HDII Papua, Poltek ATI Makassar, SMKN 5 &amp; 8 Jayapura, SMKS YPKP Sentani, Yayasan Rumah Komik, UNCEN Bhs Indonesia &amp; Inggris - isi dokumen sudah di-OCR &amp; diverifikasi (nomor MoA, tanggal, pihak penandatangan cocok), bukan cuma nama file."]
 ];
 
 const DISC = [
-  ["Tabel 1-I.7 vs 1-I.13 (dokumen live) beda angka Jumlah Lulusan untuk tahun yang sama: TS-2 = 4 (di 1-I.7) vs 3 (di 1-I.13); TS = 3 (di 1-I.7) vs 2 (di 1-I.13). Inkonsistensi internal dokumen resmi, bukan salah input pihak kami.","open"],
-  ["Tabel 1-I.13 TS-3: 'Jumlah lulusan' resmi (Sapto/PD Dikti) = 1, tapi 'Jumlah lulusan yang terlacak' dari tracer study = 2 - kontradiksi logis. Perlu kepastian dari prodi siapa dari 2 responden (Astra Sedaya Finance / SMK Negeri 8 TIK) yang valid sebagai lulusan TS-3.","open"],
-  ["Jurnal Melanesia Visual Art (JMVA) - tempat terbit 5 dari 5 artikel kategori 'nasional tidak terakreditasi' di Tabel 1-II.2 - ISSN masih placeholder 'XXXX-XXXX' di jurnal.isbi-tanahpapua.ac.id, belum terdaftar resmi. Berisiko dipertanyakan asesor sebagai publikasi belum sah.","open"],
-  ["Daniel Sande Bona &amp; Kelana Vhisnu Nugroho (Tabel 1-I.1 baris 4 &amp; 5) tidak tercantum di 12 nama resmi DPR pada PD Dikti - perlu klarifikasi status penugasan ke prodi.","open"],
-  ["Akkas (DPR) - belum ada satupun data/eviden yang terkumpul, tidak ada jalur tindak lanjut tanpa info manual dari prodi/HR.","open"],
-  ["7 judul karya mahasiswa muncul identik di Tabel 1-I.12 (Prestasi Mahasiswa) dan draft Tabel 1-II.1 (Penelitian DPRPS+Mahasiswa) - kemungkinan disengaja (beda indikator 14A vs 18A), belum dikonfirmasi ke prodi.","open"],
-  ["3 luaran berisi laporan PkM (bukan penelitian murni) tetap dihitung di Tabel 1-II.2 baris 'nasional terakreditasi' - keputusan eksplisit user (26.: akreditasi jurnal yang jadi patokan, bukan isi artikel). Dicatat sebagai keputusan, bukan bug.","decided"],
-  ["4 prosiding seminar (awalnya disangka jurnal) dimasukkan ke baris Seminar Nasional/Internasional di Tabel 1-II.2 - keputusan eksplisit user. Dicatat sebagai keputusan, bukan bug.","decided"],
-  ["Bug hyperlink Luaran DPR ketuker antar 4 dosen (Retnoning/Kadek/Ida Bagus/Yanes) - SUDAH diperbaiki di v5 (fix_and_relabel.py), diverifikasi via cross-check konten file.","fixed"],
-  ["Bug struktur Tabel 1-I.8d (header &amp; data tersimpan sebagai 2 tabel Word terpisah, celah kosong besar) - SUDAH diperbaiki di v12, digabung jadi 1 tabel.","fixed"]
+  ["BARU &amp; PRIORITAS TINGGI: SK Yudisium 2018-2025 (dibaca penuh + OCR) memberi hitungan lulusan DKV per-nama per tahun yang TIDAK COCOK dgn angka resmi di Tabel 1-I.7/1-I.13 (Data LKPS DKV.xlsx): 2020 = 4 nama (resmi: 7), 2021 = ~6-7 nama (resmi: 1), 2022 = 1 nama (resmi: 3). Kemungkinan beda definisi tahun (SK vs akademik), ada SK Yudisium lain yang belum ditemukan, atau salah satu sumber keliru. BELUM disentuh angka resminya - menunggu keputusan prodi.","open"],
+  ["Tabel 1-I.4 EWMP DPR: asumsi TS = TA 2024/2025 (satu-satunya tahun dgn data LKD Ganjil+Genap lengkap) - perlu dikonfirmasi prodi.","open"],
+  ["Tabel 1-I.4 EWMP DPR: split kolom Pendidikan (PS diakreditasi/PS lain dalam PT) untuk 5 dosen non-homebase DKV (Bayu, Nathalia, Putri, Sara, Yanes) ditaruh default ke &quot;PS lain dalam PT&quot; - asumsi konservatif, bisa saja sebagian matkul yang diampu adalah matkul DKV.","open"],
+  ["Tabel 1-I.4 EWMP DPR: M. Ilham Mustain Murda cuma ada LKD Ganjil TA 2024/2025 (Genap tidak ada di Drive) - baris ditinggal kosong.","open"],
+  ["Tabel 1-I.4 EWMP DPR: Retnoning Adji Widi Astuti &amp; Ida Bagus Gede Surya Peradantha terkonfirmasi DPR resmi tapi TIDAK ADA file LKD sama sekali di Drive - baris kosong, perlu diminta dari prodi/HR.","open"],
+  ["Jurnal Melanesia Visual Art (JMVA) - tempat terbit 5 dari 5 artikel kategori 'nasional tidak terakreditasi' di Tabel 1-II.2 - ISSN masih placeholder 'XXXX-XXXX', belum terdaftar resmi. Berisiko dipertanyakan asesor.","open"],
+  ["Akkas (DTT, bukan DPR - dikonfirmasi user) - masih minim data/eviden.","open"],
+  ["7 judul karya mahasiswa muncul identik di Tabel 1-I.12 (Prestasi Mahasiswa) dan draft Tabel 1-II.1 - kemungkinan disengaja (beda indikator 14A vs 18A), belum dikonfirmasi ke prodi.","open"],
+  ["3 luaran berisi laporan PkM tetap dihitung di Tabel 1-II.2 baris 'nasional terakreditasi' - keputusan eksplisit user, dicatat bukan bug.","decided"],
+  ["4 prosiding seminar dimasukkan ke baris Seminar Nasional/Internasional di Tabel 1-II.2 - keputusan eksplisit user, dicatat bukan bug.","decided"],
+  ["Kadek Indra Wijaya &amp; Akkas SEMPAT muncul di roster 12-nama DPR versi Data LKPS DKV.xlsx (kemungkinan salah entri sumber) - user KONFIRMASI keduanya BUKAN DPR, tetap DTT. Tidak ditambahkan ke Tabel 1-I.4.","fixed"],
+  ["Tabel 1-I.13 TS-3 kontradiksi lulusan(1)-vs-terlacak(2) - SELESAI: resync v17 dari live doc kasih data lengkap TS-5 s.d TS yang konsisten (TS-3: lulusan=3, terlacak=2). Revert patch keliru Antigravity/Gemini yang sempat ubah terlacak 2→1 berdasar data lama.","fixed"],
+  ["Bug hyperlink Luaran DPR ketuker antar 4 dosen (Retnoning/Kadek/Ida Bagus/Yanes) - sudah diperbaiki, diverifikasi via cross-check konten file.","fixed"],
+  ["Bug struktur Tabel 1-I.8d (header &amp; data 2 tabel Word terpisah) - sudah diperbaiki, digabung jadi 1 tabel.","fixed"],
+  ["Bug teks Tabel 1-I.12 baris Miki Wuka (kolom Bukti Pendukung ketimpa sisa hyperlink lama &quot;HKI SENI UMUM&quot;) - sudah diperbaiki v17 (root cause: python-docx tidak menghapus elemen w:hyperlink lama saat overwrite cell).","fixed"]
 ];
 
 const rowsEl = document.getElementById("rows");
