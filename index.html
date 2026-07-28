@@ -79,13 +79,13 @@
     <tbody id="discRows"></tbody>
   </table>
 
-  <footer>Dibuat manual berdasarkan progres pengisian LKPS sampai 2026-07-27 (v20). Bukan pengganti verifikasi resmi prodi.</footer>
+  <footer>Dibuat manual berdasarkan progres pengisian LKPS sampai 2026-07-28 (v21). Bukan pengganti verifikasi resmi prodi.</footer>
 </div>
 
 <script>
 const DATA = [
   ["1-I.1","Dosen Penghitung Rasio (DPR)","partial",
-    "12 nama resmi DPR terkonfirmasi (screenshot prodi, cocok dgn Data LKPS DKV.xlsx): Hence, Yanes Koyari, Tindia, Retnoning, M. Ilham, Kadek Indra Wijaya, Sarah Sabrina, Bayu Aji Suseno, Ida Bagus Gede Surya Peradantha, Akkas, Syafiuddin, Putri Prabu Utami. Kolom Sertifikat Pendidik Profesional (Serdos) semua 'TIDAK ADA' - benar, ini bukan kolom sertifikat kompetensi umum. Daniel &amp; Kelana TIDAK termasuk 12 nama ini - statusnya di luar tabel DPR."],
+    "Semua 12 dosen DPR + baris ke-13 (Akkas, DTT) kini terisi di lokal v21 (Pendidikan/Keahlian/Jabatan/Luaran) - awalnya cuma 5 (Tindia/Syafiuddin/Hence/Daniel/Kelana), 7 tambahan (Bayu, M. Ilham, Sarah Sabrina, Putri, Yanes, Retnoning, Kadek, Ida Bagus Gede) disusun dari LKD/CV masing-masing. PERLU DI-PUSH KE LIVE DOC - live doc masih berhenti di 5 dosen pertama (dicek ulang session ini). Akkas masih '[data belum ada - perlu LKD/CV]'; Sarah Sabrina kolom Jabatan Akademik masih kosong."],
   ["1-I.2","Dosen Tidak Tetap","done",
     "Kadek Indra Wijaya (S3, Etnomusikologi) &amp; Akkas (S2, Seni Lukis) terisi (v16). Kadek: kolom Luaran di-hyperlink ke 3 artikel jurnal asli + 2 HAKI resmi (v18)."],
   ["1-I.3","Dosen Praktisi","na","Gugur untuk Prodi Sarjana - tabel ini untuk D1/D2/D3/D4/Sarjana Terapan/Profesi 1 tahun."],
@@ -97,20 +97,21 @@ const DATA = [
   ["1-I.6.1","Pemenuhan Beban Belajar di Luar Prodi (MBKM)","done",
     "2 baris (KKN Desa, Kerja Praktek Mitra Industri) + bukti pendukung + persentase penurunan 25%."],
   ["1-I.7","Profil Jumlah Lulusan","partial",
-    "TS-2/TS-1/TS terisi, cocok dgn Data LKPS DKV.xlsx resmi. PERLU KONFIRMASI: nama-per-nama dari SK Yudisium 2018-2025 (dibaca &amp; di-OCR penuh) memberi hitungan lulusan DKV per tahun yang TIDAK COCOK dgn angka resmi ini (lihat tabel discrepancy - ini temuan baru, belum ada di versi sebelumnya)."],
+    "v21: nilai ditarik dari live doc (TS-2/TS-1/TS = 3/1/2, -16,67%), menggantikan angka lama v20 (4/1/3, +25%) yang ternyata salah. Angka mentah (3/1/2) VALID - cocok persis dgn screenshot portal resmi BAN-PT/PDDikti (sync 03 Juni 2026). Tapi persentase penurunan portal beda (-36,11%, kemungkinan dihitung dari rentang 5 tahun TS-4 s.d TS, bukan 3 tahun) - belum diubah krn formula resminya belum pasti. PERLU KONFIRMASI: nama-per-nama dari SK Yudisium 2018-2025 (dibaca &amp; di-OCR penuh) masih TIDAK COCOK dgn angka resmi manapun (lihat tabel discrepancy)."],
   ["1-I.8a","Masa Studi - Profesi/Diploma Satu","na","Gugur - prodi ini Sarjana, bukan Profesi/D1."],
   ["1-I.8b","Masa Studi - Diploma Dua/Magister","na","Gugur - tidak relevan untuk Prodi Sarjana."],
   ["1-I.8c","Masa Studi - Diploma Tiga/Doktor","na","Gugur - tidak relevan untuk Prodi Sarjana."],
   ["1-I.8d","Masa Studi Lulusan - Sarjana","done",
-    "TS-7 s.d TS-3 lengkap (24/3/3/0, 21/5/5/0, 11/0/0/0, 8/1/0/1, 15/0/0/0), cocok persis dgn Data LKPS DKV.xlsx resmi."],
+    "v21: struktur kolom diganti ke versi live doc yang lebih rinci (kolom MS dipecah 3,5≤MS≤4 dan 4≤MS≤6, bukan digabung). TS-7 s.d TS-3: 24/3(2,1,0), 21/5(1,4,0), 11/0(0,0,0), 8/1(0,1,0), 15/0(0,0,0) - dicek ulang session ini, cocok PERSIS dgn screenshot portal resmi BAN-PT/PDDikti (sync 03 Juni 2026)."],
   ["1-I.9","Pengukuran Capaian Pembelajaran Lulusan (CPL)","empty","Belum ada data terkumpul. Ada dokumen CPL pendukung di D:\\Akreditasi\\CPL (matriks, dokumen 5 &amp; 6) - belum dipetakan ke tabel ini."],
-  ["1-I.10","Kepuasan Pengguna Lulusan","empty","Belum ada data terkumpul (perlu tracer study dari sisi pengguna/employer, beda dari tracer alumni)."],
+  ["1-I.10","Kepuasan Pengguna Lulusan","done",
+    "v21: ditemukan sudah diisi MANUAL oleh operator di live doc (persentase Sangat Baik/Baik/Cukup/Kurang utk 7 jenis kemampuan + narasi Rencana Tindak Lanjut) - ditarik ke lokal session ini. Kolom &quot;Link Dokumen&quot; (baru, ditambah operator) masih placeholder teks &quot;Data Dukung&quot;, BELUM hyperlink asli ke laporan pengukuran - perlu diisi prodi."],
   ["1-I.11","Tren Mahasiswa Baru","done","11/19/13, persentase -20,57%."],
   ["1-I.12","Prestasi Mahasiswa","done",
     "12 baris termasuk Miki Wuka (Pendanaan Dana Abadi Kebudayaan 2025, ditambahkan v16). Catatan lama: 7 judul karya mahasiswa identik dgn draft Tabel 1-II.1 - kemungkinan disengaja (beda indikator 14A vs 18A), belum dikonfirmasi ke prodi."],
   ["1-I.13","Waktu Tunggu Lulusan","done",
     "Resync penuh dari live doc (v17): 6 baris TS-5 s.d TS (7/0/0/0, 1/0/0/0, 3/2/1/100, 0/0/0/0, 0/0/0/0, 0/0/0/0) - cocok persis dgn Data LKPS DKV.xlsx resmi, TIDAK ADA lagi kontradiksi lulusan-vs-terlacak (revert dari patch keliru Antigravity/Gemini yang sempat ubah angka tanpa dasar data terbaru). PERLU KONFIRMASI: temuan SK Yudisium baru (lihat 1-I.7) berpotensi mempengaruhi tabel ini juga."],
-  ["1-I.14","Pengakuan Kompetensi Lulusan","done","Miki Wuka (Kementerian Kebudayaan RI 2025) &amp; Hamzah Zaeni (Disbudpar Papua 2022) ditambahkan v16."],
+  ["1-I.14","Pengakuan Kompetensi Lulusan","done","3 baris: Miki Wuka (Kementerian Kebudayaan RI 2025), Hamzah Zaeni - Karya Favorit (Disbudpar Papua 2022, v16), Hamzah Zaeni - Juara Harapan 2 (Disbudpar Papua 2022, ditemukan sbg entri manual operator di live doc, ditarik ke lokal v21)."],
   ["1-II.1","Penelitian DPRPS yang Melibatkan Mahasiswa","partial",
     "7 entri tersusun lengkap + hyperlink ke 7 bukti PDF jurnal mahasiswa (isi tiap PDF sudah diverifikasi) - baru di draft lokal, belum ditempel ke dokumen live."],
   ["1-II.2","Publikasi Ilmiah DPRPS","partial",
@@ -127,6 +128,9 @@ const DATA = [
 ];
 
 const DISC = [
+  ["v21: perbandingan penuh live doc vs lokal (session ini) - live doc TERNYATA sudah di-edit manual oleh operator untuk 4 tabel (1-I.7, 1-I.8d, 1-I.10, 1-I.14) yang belum pernah masuk ke draft lokal. Semua sudah ditarik/di-merge ke v21, plus semua isian lokal yang belum ada di live (1-I.1 baris 6-14, EWMP DPR, Rekognisi DPRPS, dll) TETAP dipertahankan.","fixed"],
+  ["v21: 27 tabel dirapikan (spacing paragraf dlm sel di-nol-kan/single-line, 2 baris header tiap tabel di-set repeat-on-page-break, cantSplit biar baris tidak kepotong lintas halaman) - respon ke laporan tabel yang &quot;misah jauh-jauh&quot;.","fixed"],
+  ["Tabel 1-I.7/1-I.8d/1-I.11: divalidasi via screenshot portal resmi BAN-PT/PDDikti (sync 03 Juni 2026) - angka mentah cocok persis. Hanya persentase penurunan 1-I.7 &amp; 1-I.11 beda dari portal (kemungkinan beda cakupan tahun) - belum diubah, formula resmi belum pasti.","open"],
   ["BARU &amp; PRIORITAS TINGGI: SK Yudisium 2018-2025 (dibaca penuh + OCR) memberi hitungan lulusan DKV per-nama per tahun yang TIDAK COCOK dgn angka resmi di Tabel 1-I.7/1-I.13 (Data LKPS DKV.xlsx): 2020 = 4 nama (resmi: 7), 2021 = ~6-7 nama (resmi: 1), 2022 = 1 nama (resmi: 3). Kemungkinan beda definisi tahun (SK vs akademik), ada SK Yudisium lain yang belum ditemukan, atau salah satu sumber keliru. BELUM disentuh angka resminya - menunggu keputusan prodi.","open"],
   ["Tabel 1-I.4 EWMP DPR: asumsi TS = TA 2024/2025 (satu-satunya tahun dgn data LKD Ganjil+Genap lengkap) - perlu dikonfirmasi prodi.","open"],
   ["Tabel 1-I.4 EWMP DPR: split kolom Pendidikan (PS diakreditasi/PS lain dalam PT) untuk 5 dosen non-homebase DKV (Bayu, Nathalia, Putri, Sara, Yanes) ditaruh default ke &quot;PS lain dalam PT&quot; - asumsi konservatif, bisa saja sebagian matkul yang diampu adalah matkul DKV.","open"],
