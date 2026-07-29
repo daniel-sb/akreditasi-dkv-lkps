@@ -1,0 +1,487 @@
+<title>Daftar Pustaka — Tabel 1-II.2 Publikasi Ilmiah Dosen | DKV ISBI Tanah Papua</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root{
+    --bg:#f4f6f3; --card:#ffffff; --ink:#1a2420; --muted:#5c6b62; --border:#dde3de;
+    --accent:#a8501f; --accent-soft:#f4e6d9; --accent-ink:#7a3a16;
+    --ok:#2f7a4f; --ok-soft:#e3f3e8;
+    --warn:#b8790a; --warn-soft:#fbf1de;
+    --pend:#6f7d76; --pend-soft:#eceeec;
+    --link:#8a4526;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#141815; --card:#1b201c; --ink:#eef0ec; --muted:#9aa79f; --border:#2c332d;
+      --accent:#dd8a54; --accent-soft:#3a2417; --accent-ink:#f0b48a;
+      --ok:#4fbf7c; --ok-soft:#173225;
+      --warn:#e0a838; --warn-soft:#3a2c0d;
+      --pend:#8b968f; --pend-soft:#232824;
+      --link:#e6a878;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#141815; --card:#1b201c; --ink:#eef0ec; --muted:#9aa79f; --border:#2c332d;
+    --accent:#dd8a54; --accent-soft:#3a2417; --accent-ink:#f0b48a;
+    --ok:#4fbf7c; --ok-soft:#173225;
+    --warn:#e0a838; --warn-soft:#3a2c0d;
+    --pend:#8b968f; --pend-soft:#232824;
+    --link:#e6a878;
+  }
+  :root[data-theme="light"]{
+    --bg:#f4f6f3; --card:#ffffff; --ink:#1a2420; --muted:#5c6b62; --border:#dde3de;
+    --accent:#a8501f; --accent-soft:#f4e6d9; --accent-ink:#7a3a16;
+    --ok:#2f7a4f; --ok-soft:#e3f3e8;
+    --warn:#b8790a; --warn-soft:#fbf1de;
+    --pend:#6f7d76; --pend-soft:#eceeec;
+    --link:#8a4526;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-size:15.5px; line-height:1.6;
+  }
+  .page{max-width:800px;margin:0 auto;padding:40px 22px 90px}
+  a{color:var(--link)}
+  h1,h2,h3{
+    font-family:Constantia,Cambria,"Iowan Old Style",Georgia,"Times New Roman",serif;
+    text-wrap:balance; margin:0;
+  }
+  header.top{margin-bottom:28px}
+  .eyebrow{
+    font-size:.72rem; letter-spacing:.11em; text-transform:uppercase;
+    color:var(--accent-ink); font-weight:700; margin:0 0 8px;
+  }
+  h1{font-size:1.7rem; font-weight:600; margin-bottom:6px}
+  .lede{color:var(--muted); font-size:.95rem; max-width:62ch}
+  .lede b{color:var(--ink)}
+
+  /* cross-check table mirroring Tabel 1-II.2 */
+  .checktable{
+    margin:26px 0 34px; border:1px solid var(--border); border-radius:10px;
+    overflow:hidden; background:var(--card);
+  }
+  .checktable table{width:100%; border-collapse:collapse; font-size:.86rem}
+  .checktable caption{
+    text-align:left; padding:12px 16px 8px; font-size:.72rem; letter-spacing:.08em;
+    text-transform:uppercase; color:var(--muted); font-weight:700;
+  }
+  .checktable th, .checktable td{
+    padding:8px 14px; border-top:1px solid var(--border); text-align:left;
+  }
+  .checktable thead th{
+    color:var(--muted); font-weight:600; font-size:.78rem; border-top:none;
+  }
+  .checktable td.num, .checktable th.num{
+    text-align:right; font-variant-numeric:tabular-nums; width:64px;
+  }
+  .checktable tr.total td{font-weight:700; border-top:2px solid var(--border)}
+  .checktable a.jump{text-decoration:none}
+  .checktable a.jump:hover{text-decoration:underline}
+  .cellval{font-variant-numeric:tabular-nums}
+  .cellval.zero{color:var(--muted)}
+  .cellval.pending{color:var(--warn); font-style:italic}
+
+  section.category{margin-top:40px; scroll-margin-top:20px}
+  .category > h2{
+    font-size:1.18rem; font-weight:600; display:flex; align-items:baseline; gap:10px;
+    padding-bottom:8px; border-bottom:2px solid var(--accent-soft);
+  }
+  .category > h2 .n{
+    font-family:-apple-system,"Segoe UI",sans-serif; font-size:.72rem; font-weight:700;
+    color:var(--accent-ink); background:var(--accent-soft); border-radius:999px;
+    padding:2px 10px; font-variant-numeric:tabular-nums;
+  }
+
+  .yeargroup{margin-top:22px; scroll-margin-top:20px}
+  .yeargroup > h3{
+    font-size:.82rem; font-weight:700; letter-spacing:.05em; text-transform:uppercase;
+    color:var(--muted); margin-bottom:10px; font-family:inherit;
+  }
+  .yeargroup > h3 .yr{color:var(--ink); font-variant-numeric:tabular-nums}
+
+  ol.refs{list-style:none; margin:0; padding:0; counter-reset:ref}
+  ol.refs > li{
+    counter-increment:ref; position:relative; padding:12px 0 12px 34px;
+    border-top:1px solid var(--border);
+  }
+  ol.refs > li:first-child{border-top:none}
+  ol.refs > li::before{
+    content:counter(ref); position:absolute; left:0; top:12px;
+    font-variant-numeric:tabular-nums; color:var(--muted); font-size:.85rem;
+  }
+  .ref .title{font-weight:600; margin-bottom:3px}
+  .ref .meta{color:var(--muted); font-size:.92rem}
+  .ref .authors b{color:var(--ink); font-weight:600}
+
+  .badge{
+    display:inline-flex; align-items:center; gap:5px; font-size:.7rem; font-weight:700;
+    letter-spacing:.03em; text-transform:uppercase; padding:2px 9px; border-radius:999px;
+    margin-left:8px; vertical-align:middle;
+  }
+  .badge.ok{color:var(--ok); background:var(--ok-soft)}
+  .badge.warn{color:var(--warn); background:var(--warn-soft)}
+  .badge.pend{color:var(--pend); background:var(--pend-soft); border:1px dashed var(--pend)}
+
+  .pending-note{
+    padding:14px 16px; border:1px dashed var(--pend); border-radius:10px;
+    color:var(--muted); font-size:.9rem; background:var(--pend-soft);
+  }
+
+  .footnote-ref{
+    font-size:.72rem; vertical-align:super; color:var(--warn); font-weight:700; margin-left:2px;
+  }
+
+  section.notes{
+    margin-top:56px; padding-top:24px; border-top:1px solid var(--border);
+  }
+  section.notes h2{font-size:1rem; margin-bottom:14px}
+  section.notes ol{padding-left:1.3em; color:var(--muted); font-size:.88rem}
+  section.notes li{margin-bottom:10px}
+  section.notes li b{color:var(--ink)}
+
+  .backtotop{
+    position:fixed; right:22px; bottom:22px; background:var(--card); border:1px solid var(--border);
+    border-radius:999px; padding:9px 16px; font-size:.8rem; color:var(--muted);
+    text-decoration:none; box-shadow:0 2px 10px rgba(0,0,0,.08);
+  }
+  .backtotop:hover{color:var(--ink)}
+
+  @media (max-width:640px){
+    .page{padding:28px 16px 90px}
+    .checktable{overflow-x:auto}
+    .checktable table{min-width:520px}
+  }
+
+  :focus-visible{outline:2px solid var(--accent); outline-offset:2px}
+</style>
+
+<div class="page">
+  <header class="top">
+    <p class="eyebrow">LKPS &middot; Tabel 1-II.2 &middot; Prodi DKV, ISBI Tanah Papua</p>
+    <h1>Daftar Pustaka Publikasi Ilmiah Dosen</h1>
+    <p class="lede">
+      Rincian judul untuk setiap sel Tabel 1-II.2, dikelompokkan menurut <b>jenis publikasi</b> lalu
+      <b>tahun (TS-2 = 2024, TS-1 = 2025, TS = 2026)</b>. Setiap sel di tabel LKPS ditautkan langsung
+      ke bagian yang bersangkutan di halaman ini.
+    </p>
+  </header>
+
+  <div class="checktable">
+    <table>
+      <caption>Cocokkan dengan Tabel 1-II.2 &mdash; Jumlah Judul</caption>
+      <thead>
+        <tr>
+          <th>Jenis Publikasi</th>
+          <th class="num">TS-2<br>2024</th>
+          <th class="num">TS-1<br>2025</th>
+          <th class="num">TS<br>2026</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Jurnal nasional tidak terakreditasi</td>
+          <td class="num"><span class="cellval zero">0</span></td>
+          <td class="num"><a class="jump" href="#nasional-tidak-akreditasi-2025"><span class="cellval">5</span></a></td>
+          <td class="num"><span class="cellval zero">0</span></td>
+        </tr>
+        <tr>
+          <td>Jurnal nasional terakreditasi</td>
+          <td class="num"><a class="jump" href="#nasional-akreditasi-2024"><span class="cellval">3</span></a></td>
+          <td class="num"><a class="jump" href="#nasional-akreditasi-2025"><span class="cellval">7</span></a></td>
+          <td class="num"><a class="jump" href="#nasional-akreditasi-2026"><span class="cellval">8</span></a></td>
+        </tr>
+        <tr>
+          <td>Jurnal internasional</td>
+          <td class="num"><span class="cellval zero">0</span></td>
+          <td class="num"><span class="cellval zero">0</span></td>
+          <td class="num"><span class="cellval zero">0</span></td>
+        </tr>
+        <tr>
+          <td>Jurnal internasional bereputasi</td>
+          <td class="num"><span class="cellval zero">0</span></td>
+          <td class="num"><a class="jump" href="#internasional-bereputasi-2025"><span class="cellval">1</span></a></td>
+          <td class="num"><a class="jump" href="#internasional-bereputasi-2026"><span class="cellval">1</span></a></td>
+        </tr>
+        <tr>
+          <td>Seminar wilayah/perguruan tinggi</td>
+          <td class="num"><span class="cellval zero">0</span></td>
+          <td class="num"><span class="cellval zero">0</span></td>
+          <td class="num"><span class="cellval zero">0</span></td>
+        </tr>
+        <tr>
+          <td>Seminar nasional</td>
+          <td class="num"><span class="cellval zero">0</span></td>
+          <td class="num"><a class="jump" href="#seminar-nasional-2025"><span class="cellval">2</span></a></td>
+          <td class="num"><a class="jump" href="#seminar-nasional-2026"><span class="cellval pending">menyusul</span></a></td>
+        </tr>
+        <tr>
+          <td>Seminar internasional</td>
+          <td class="num"><span class="cellval zero">0</span></td>
+          <td class="num"><a class="jump" href="#seminar-internasional-2025"><span class="cellval">1</span></a></td>
+          <td class="num"><span class="cellval zero">0</span></td>
+        </tr>
+        <tr>
+          <td>Tulisan media massa wilayah/provinsi</td>
+          <td class="num"><span class="cellval zero">0</span></td>
+          <td class="num"><span class="cellval zero">0</span></td>
+          <td class="num"><span class="cellval zero">0</span></td>
+        </tr>
+        <tr>
+          <td>Tulisan media massa nasional</td>
+          <td class="num"><span class="cellval zero">0</span></td>
+          <td class="num"><span class="cellval zero">0</span></td>
+          <td class="num"><span class="cellval zero">0</span></td>
+        </tr>
+        <tr>
+          <td>Tulisan media massa internasional</td>
+          <td class="num"><span class="cellval zero">0</span></td>
+          <td class="num"><span class="cellval zero">0</span></td>
+          <td class="num"><span class="cellval zero">0</span></td>
+        </tr>
+        <tr class="total">
+          <td>Jumlah</td>
+          <td class="num">3</td>
+          <td class="num">16</td>
+          <td class="num">9<span class="footnote-ref">1</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ============ Jurnal nasional tidak terakreditasi ============ -->
+  <section class="category" id="nasional-tidak-akreditasi">
+    <h2>Jurnal nasional tidak terakreditasi <span class="n">5 judul</span></h2>
+
+    <div class="yeargroup" id="nasional-tidak-akreditasi-2025">
+      <h3>TS-1 &middot; <span class="yr">2025</span></h3>
+      <ol class="refs">
+        <li class="ref">
+          <div class="title">Perancangan Animasi Bilingual &ldquo;Monj Hen Wani&rdquo; sebagai Media Pelestarian Bahasa Ibu di Kampung Enggros, Kota Jayapura</div>
+          <div class="meta authors">Nur Halisah Asaf, <b>Syafiuddin</b>, <b>Hence Sahusilawane</b></div>
+          <div class="meta">Jurnal Melanesia Visual Art (JMVA), Vol. 1, No. 1, 2025</div>
+        </li>
+        <li class="ref">
+          <div class="title">Representasi Visual Ritual Warekma Suku Hubula dalam Film Dokumenter Etnografi</div>
+          <div class="meta authors">Miki Wuka, <b>Muhammad Ilham Mustain Murda</b>, <b>Hence Sahusilawane</b></div>
+          <div class="meta">Jurnal Melanesia Visual Art (JMVA), Vol. 1, No. 1, 2025</div>
+        </li>
+        <li class="ref">
+          <div class="title">Ruang Teduh: Integrasi Art Therapy dan Media Digital sebagai Strategi Destigmatisasi Kesehatan Mental di Papua</div>
+          <div class="meta authors">Ansarina Rabiyah, Penny Tabuni, Dominggas Sobi, <b>Muhammad Ilham Mustain Murda</b>, <b>Syafiuddin</b></div>
+          <div class="meta">Jurnal Melanesia Visual Art (JMVA), Vol. 1, No. 1, 2025</div>
+        </li>
+        <li class="ref">
+          <div class="title">Membingkai Papua dari Lensa Sendiri: Strategi Pelatihan Sinema Kontekstual dalam SansDay</div>
+          <div class="meta authors"><b>Muhammad Ilham Mustain Murda</b>, Miki Wuka, Izak Gabriel Johannes</div>
+          <div class="meta">Jurnal Melanesia Visual Art (JMVA), Vol. 1, No. 1, 2025</div>
+        </li>
+        <li class="ref">
+          <div class="title">Perancangan Animasi Iklan Layanan Masyarakat sebagai Media Edukasi Pencegahan Malaria di Kota Jayapura</div>
+          <div class="meta authors">Lukas Alexsander Kayoi, <b>Syafiuddin</b>, <b>Tindia Febriyati</b></div>
+          <div class="meta">Jurnal Melanesia Visual Art (JMVA), Vol. 1, No. 1, 2025</div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ Jurnal nasional terakreditasi ============ -->
+  <section class="category" id="nasional-akreditasi">
+    <h2>Jurnal nasional terakreditasi <span class="n">18 judul</span></h2>
+
+    <div class="yeargroup" id="nasional-akreditasi-2024">
+      <h3>TS-2 &middot; <span class="yr">2024</span></h3>
+      <ol class="refs">
+        <li class="ref">
+          <div class="title">Pelatihan Ilustrasi Digital Desain Karakter Papua bagi Siswa SMK Negeri 8 TIK Jayapura</div>
+          <div class="meta authors"><b>Hence Sahusilawane</b>, <b>Putri Prabu Utami</b>, Nur Halisah Asaf, Nasrulah</div>
+          <div class="meta">IKONIK: Jurnal Seni dan Desain, Vol. 6, No. 1, Januari 2024 &middot; SINTA 5</div>
+        </li>
+        <li class="ref">
+          <div class="title">Bilingual Storytelling Boneka Kulit Kayu Khombouw dan Buku Cerita sebagai Media Pengenalan Budaya Papua</div>
+          <div class="meta authors"><b>Putri Prabu Utami</b>, Bayu Aji Suseno, <b>Retnoning Adji Widi Astuti</b>, Yulini Rinantanti, <b>Hence Sahusilawane</b>, M.B.T. Sampurno</div>
+          <div class="meta">Jurnal Pendidikan Anak, Universitas Negeri Yogyakarta, Vol. 13, No. 2, 2024 &middot; SINTA 3</div>
+        </li>
+        <li class="ref">
+          <div class="title">Pemanfaatan Serat Kulit Kayu Semang (Guazuma ulmifolia) sebagai Bahan Dasar Benang Rajut Noken</div>
+          <div class="meta authors"><b>Yanes Koyari</b>, Hasbi</div>
+          <div class="meta">CORAK: Jurnal Seni Kriya, ISI Yogyakarta, Vol. 13, No. 1, Mei 2024 &middot; SINTA 4</div>
+        </li>
+      </ol>
+    </div>
+
+    <div class="yeargroup" id="nasional-akreditasi-2025">
+      <h3>TS-1 &middot; <span class="yr">2025</span></h3>
+      <ol class="refs">
+        <li class="ref">
+          <div class="title">Asmat Spirit Masks as an Idea for Creation of Paintings</div>
+          <div class="meta authors">Yohanis Paulus Kangganam, <b>Bayu Aji Suseno</b>, <b>Sarah Sabrina Mukkadam</b></div>
+          <div class="meta">CITA KARA: Jurnal Penciptaan dan Pengkajian Seni Murni, ISI Denpasar, Vol. 5, No. 2, 2025 &middot; SINTA 5</div>
+        </li>
+        <li class="ref">
+          <div class="title">Reviving the Sanghyang Grodog Ritual Dance</div>
+          <div class="meta authors">Ni Made Arshiniwati, <b>Ida Bagus Gede Surya Peradantha</b></div>
+          <div class="meta">Jurnal Kajian Bali, Universitas Udayana, Vol. 15, No. 1, April 2025 &middot; SINTA 2</div>
+        </li>
+        <li class="ref">
+          <div class="title">Dari Pengalaman Artistik Menuju Penelitian Ilmiah: Eksplorasi Autoetnografi dalam Penciptaan Karya Seni</div>
+          <div class="meta authors"><b>Ida Bagus Gede Surya Peradantha</b>, Ida Ayu Wimba Ruspawati, Angga Eka Karina, <b>Kadek Indra Wijaya</b></div>
+          <div class="meta">Visual Heritage: Jurnal Kreasi Seni dan Budaya, Vol. 7, No. 2, Januari 2025 &middot; SINTA 4</div>
+        </li>
+        <li class="ref">
+          <div class="title">Strategi Pengembangan Teknik dan Repertoar Gamelan Baleganjur untuk Meningkatkan Partisipasi Budaya Umat Hindu di Keerom, Papua</div>
+          <div class="meta authors"><b>Kadek Indra Wijaya</b>, I Dewa Ketut Wicaksana, <b>Ida Bagus Gede Surya Peradantha</b></div>
+          <div class="meta">KOMATIKA: Jurnal Pengabdian Kepada Masyarakat, Vol. 5, No. 1, Mei 2025 &middot; SINTA 4</div>
+        </li>
+        <li class="ref">
+          <div class="title">Arsip Visual Partisipatif sebagai Praktik Pengarsipan Kota: Kasus Program Tasimpan di Taman Imbi Jayapura</div>
+          <div class="meta authors"><b>Muhammad Ilham Mustain Murda</b></div>
+          <div class="meta">Jurnal IMAJI, Institut Kesenian Jakarta, Vol. 16, No. 3, Desember 2025 &middot; SINTA 4</div>
+        </li>
+        <li class="ref">
+          <div class="title">WISISI: Transformasi Tari-Musik Papua dari Ritual Adat ke Hiburan Global Digital</div>
+          <div class="meta authors"><b>Muhammad Ilham Mustain Murda</b></div>
+          <div class="meta">Greget: Jurnal Kreativitas dan Studi Tari, ISI Surakarta, Vol. 24, No. 2, Desember 2025 &middot; SINTA 4</div>
+        </li>
+        <li class="ref">
+          <div class="title">Educational Doll Design with Exploration of the Mechanical Properties of Khombouw Bark</div>
+          <div class="meta authors">Putri Prabu Utami, <b>Bayu Aji Suseno</b>, <b>Retnoning Adji Widi Astuti</b>, Yulini Rinantanti, Winta Adhitia Guspara</div>
+          <div class="meta">Productum: Jurnal Desain Produk, Vol. 8, No. 1, Januari&ndash;Juni 2025 &middot; terakreditasi SINTA 3</div>
+        </li>
+      </ol>
+    </div>
+
+    <div class="yeargroup" id="nasional-akreditasi-2026">
+      <h3>TS &middot; <span class="yr">2026</span></h3>
+      <ol class="refs">
+        <li class="ref">
+          <div class="title">Klasifikasi Gerakan Tari Bali Perempuan Menggunakan Metode ST-GCN</div>
+          <div class="meta authors"><b>Daniel Sande Bona</b></div>
+          <div class="meta">JAITI: Journal of AI and Technology Information, Vol. 4, No. 2, Juni 2026 &middot; SINTA 4</div>
+        </li>
+        <li class="ref">
+          <div class="title">Comparison of YOLO26 and RT-DETR-L for Manga Visual Element Detection on the Manga109 Dataset</div>
+          <div class="meta authors"><b>Daniel Sande Bona</b>, <b>Tindia Febriyati</b></div>
+          <div class="meta">Jurnal IDEALIS, Universitas Budi Luhur &middot; SINTA 3</div>
+        </li>
+        <li class="ref">
+          <div class="title">Penciptaan Musik Tari Rejang Giri Jaya Ing Pura untuk Mengembangkan Seni Tradisional Bali di Kota Jayapura</div>
+          <div class="meta authors">Ida Bagus Gede Surya Peradantha, I Putu Agus Eko Sattvika, <b>Kadek Indra Wijaya</b></div>
+          <div class="meta">MITRA: Jurnal Pemberdayaan Masyarakat, Universitas Katolik Atma Jaya, Vol. 10, No. 1, 2026 &middot; SINTA 4</div>
+        </li>
+        <li class="ref">
+          <div class="title">Strategi Budaya Sonorik Reflektif dalam Komposisi Musik Rene Hu</div>
+          <div class="meta authors"><b>Kadek Indra Wijaya</b>, et al.</div>
+          <div class="meta">JURRSENDEM: Jurnal Riset Rumpun Seni, Desain dan Media, Vol. 5, No. 1, April 2026 &middot; SINTA 4</div>
+        </li>
+        <li class="ref">
+          <div class="title">Earth Oven Diplomacy: A New Paradigm for Regional Cohesion</div>
+          <div class="meta authors"><b>Muhammad Ilham Mustain Murda</b>, Suwarjiya, <b>Tindia Febriyati</b></div>
+          <div class="meta">Jurnal Asia Pacific Studies, Universitas Kristen Indonesia, Vol. 10, No. 1, 2026 &middot; SINTA 4</div>
+        </li>
+        <li class="ref">
+          <div class="title">The Decolonization of the Papuan Body: Hybridity and Identity Politics in Jecko Siompo&rsquo;s Animal Pop Choreography Practice</div>
+          <div class="meta authors">Frans Junias Jugganza, <b>Muhammad Ilham Mustain Murda</b>, Hilmar Farid, Yola Yulfianti</div>
+          <div class="meta">Geter: Journal of Drama, Dance and Music, Universitas Negeri Surabaya, 2026 &middot; SINTA 5</div>
+        </li>
+        <li class="ref">
+          <div class="title">Tema P5 PAUD Kurikulum Merdeka pada Perancangan Model Pertunjukan Boneka Karakter Satwa Endemik Papua Berbahan Kulit Kayu Khombouw</div>
+          <div class="meta authors">Putri Prabu Utami, <b>Retnoning Adji Widi Astuti</b>, Ditha Nizaora, <b>Bayu Aji Suseno</b>, Junaidi</div>
+          <div class="meta">IKONIK: Jurnal Seni dan Desain, Vol. 8, No. 1, Januari 2026 &middot; SINTA 5</div>
+        </li>
+        <li class="ref">
+          <div class="title">Teknik Ikat dan Teks Filosofis: Analisis Etnografi Seni Ikat Rotan Totemik dalam Konstruksi Rumah Kun Suku Armati</div>
+          <div class="meta authors"><b>Kelana Vhisnu Nugroho</b>, <b>Tindia Febriyati</b></div>
+          <div class="meta">Jurnal Multidisiplin Indonesia, Vol. 5, No. 4, 2026<span class="badge warn">cek ulang</span></div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ Jurnal internasional bereputasi ============ -->
+  <section class="category" id="internasional-bereputasi">
+    <h2>Jurnal internasional bereputasi <span class="n">2 judul</span></h2>
+
+    <div class="yeargroup" id="internasional-bereputasi-2025">
+      <h3>TS-1 &middot; <span class="yr">2025</span></h3>
+      <ol class="refs">
+        <li class="ref">
+          <div class="title">Improving Technical and Conceptual Photography Skills of Vocational School Students <span class="badge warn">cek ulang</span></div>
+          <div class="meta authors"><b>Tindia Febriyati</b>, <b>Kelana Vhisnu Nugroho</b></div>
+          <div class="meta">International Journal of Science and Environment, 2025</div>
+        </li>
+      </ol>
+    </div>
+
+    <div class="yeargroup" id="internasional-bereputasi-2026">
+      <h3>TS &middot; <span class="yr">2026</span></h3>
+      <ol class="refs">
+        <li class="ref">
+          <div class="title">Resisting the 2045 Anxiety: Reimagining the Kir Owa Isago Ritual as Ethnoscience and Gastrodiplomacy Among Urbanized Hubula Youth <span class="badge ok">Scopus/SJR</span></div>
+          <div class="meta authors"><b>Muhammad Ilham Mustain Murda</b>, et al.</div>
+          <div class="meta">Sciences of Conservation and Archaeology, Shanghai Museum, Vol. 38, No. 1, 2026 &middot; SJR 0.217</div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ Seminar nasional ============ -->
+  <section class="category" id="seminar-nasional">
+    <h2>Seminar nasional <span class="n">2 judul</span></h2>
+
+    <div class="yeargroup" id="seminar-nasional-2025">
+      <h3>TS-1 &middot; <span class="yr">2025</span></h3>
+      <ol class="refs">
+        <li class="ref">
+          <div class="title">Dari Api ke Arsip: Transformasi Ritual Bakar Batu melalui Media Dokumenter Edukatif</div>
+          <div class="meta authors"><b>Muhammad Ilham Mustain Murda</b></div>
+          <div class="meta">Prosiding Seminar Seni Media Rekam, FSMR ISI Yogyakarta, 2025</div>
+        </li>
+        <li class="ref">
+          <div class="title">Vulnerable Flexibility: An Analysis of the Representation of Gig Workers&rsquo; Sustainability in Indonesian Digital Media</div>
+          <div class="meta authors"><b>Muhammad Ilham Mustain Murda</b>, <b>Tindia Febriyati</b></div>
+          <div class="meta">Proceeding, Indonesian Forum on Labor and Productivity (IFLP), Vol. 1, 2025</div>
+        </li>
+      </ol>
+    </div>
+
+    <div class="yeargroup" id="seminar-nasional-2026">
+      <h3>TS &middot; <span class="yr">2026</span></h3>
+      <p class="pending-note">
+        <span class="badge pend">Menyusul</span>
+        Tabel 1-II.2 mencatat 1 judul seminar nasional pada TS (2026), tetapi berkas prosidingnya belum
+        ditemukan di folder eviden Drive (folder <code>PROSIDING</code> baru berisi subfolder 2024 dan 2025).
+        Tautan ini akan diperbarui begitu berkas diunggah.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ Seminar internasional ============ -->
+  <section class="category" id="seminar-internasional">
+    <h2>Seminar internasional <span class="n">1 judul</span></h2>
+
+    <div class="yeargroup" id="seminar-internasional-2025">
+      <h3>TS-1 &middot; <span class="yr">2025</span></h3>
+      <ol class="refs">
+        <li class="ref">
+          <div class="title">Geoheritage, Social Solidarity, and Cultural Education: The Bakar Batu Tradition</div>
+          <div class="meta authors"><b>Muhammad Ilham Mustain Murda</b></div>
+          <div class="meta">3rd Geo Tourism International Conference (GTIC), 2025</div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="notes">
+    <h2>Catatan</h2>
+    <ol>
+      <li id="fn1"><b>Total TS (2026) tercatat 9 dari 10 judul.</b> 1 judul &ldquo;Seminar nasional&rdquo; pada Tabel 1-II.2 belum memiliki berkas prosiding di folder eviden &mdash; lihat catatan pada bagian Seminar Nasional 2026 di atas.</li>
+      <li><b>Jurnal Melanesia Visual Art (JMVA)</b> diklasifikasikan sebagai &ldquo;tidak terakreditasi&rdquo; karena merupakan jurnal internal ISBI Tanah Papua yang baru terbit Volume 1 Nomor 1 pada 2025 dan belum tercatat memiliki peringkat SINTA.</li>
+      <li>Dua judul ditandai <span class="badge warn">cek ulang</span>: status indeksasi/akreditasinya belum terverifikasi independen dan sebaiknya dikonfirmasi ulang sebelum visitasi &mdash; &ldquo;International Journal of Science and Environment&rdquo; (Tindia/Kelana, 2025) dan &ldquo;Jurnal Multidisiplin Indonesia&rdquo; terbitan Riviera Publishing (Kelana/Tindia, 2026).</li>
+      <li>Dua naskah dosen ditemukan di folder eviden namun <b>tidak dimasukkan</b> ke penghitungan resmi tabel karena data tahun/venue belum bisa dipastikan: paper JOCIA (Muhammad Ilham Mustain Murda) dan satu naskah tentang Project Based Learning (Tindia Febriyati, dengan Maya Mashita, Universitas Cenderawasih) yang venue-nya tidak tercantum dalam berkas.</li>
+      <li>Tahun TS-2/TS-1/TS mengikuti tahun kalender terbit (2024/2025/2026), bukan tahun akademik.</li>
+    </ol>
+  </section>
+</div>
+
+<a class="backtotop" href="#top">&uarr; Ke atas</a>
