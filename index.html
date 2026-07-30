@@ -79,7 +79,7 @@
     <tbody id="discRows"></tbody>
   </table>
 
-  <footer>Dibuat manual berdasarkan progres pengisian LKPS sampai 2026-07-28 (v21). Bukan pengganti verifikasi resmi prodi.</footer>
+  <footer>Dibuat manual berdasarkan progres pengisian LKPS sampai 2026-07-30 (v27). Bukan pengganti verifikasi resmi prodi.</footer>
 </div>
 
 <script>
@@ -115,7 +115,7 @@ const DATA = [
   ["1-II.1","Penelitian DPRPS yang Melibatkan Mahasiswa","partial",
     "7 entri tersusun lengkap + hyperlink ke 7 bukti PDF jurnal mahasiswa (isi tiap PDF sudah diverifikasi) - baru di draft lokal, belum ditempel ke dokumen live."],
   ["1-II.2","Publikasi Ilmiah DPRPS","partial",
-    "29 judul unik 2024-2026 - 5 nasional tidak terakreditasi, 18 nasional terakreditasi, 2 internasional bereputasi, 3 seminar nasional + 1 seminar internasional. Baru di draft lokal, belum ditempel ke dokumen live. Flag: 5 artikel di Jurnal Melanesia Visual Art (JMVA) - ISSN masih placeholder, belum terdaftar resmi."],
+    "v27: dibangun ulang dari nol via riset independen (baca tiap paper + cek SINTA/Scopus per jurnal), hasilnya COCOK dgn hitungan v21 lama (18 nasional terakreditasi, 2 internasional bereputasi, 3 seminar nasional, 1 seminar internasional) - saling menguatkan. Daftar pustaka terkategori per jenis+tahun kini di <a href=\"daftar-pustaka-1ii2.html\">daftar-pustaka-1ii2.html</a>, dan 9 angka di kolom TS-2/TS-1/TS Tabel 1-II.2 (docx lokal v27, halaman 28) sudah jadi hyperlink ke bagian yg sesuai. Baru di draft lokal, belum ditempel ke dokumen live. Flag: 5 artikel di Jurnal Melanesia Visual Art (JMVA) - ISSN masih placeholder, belum terdaftar resmi."],
   ["1-II.3","Luaran Lainnya (HKI, Karya Seni, Buku)","partial",
     "8 HKI Hak Cipta tersusun (NB=8) - baru di draft lokal, belum ditempel ke dokumen live."],
   ["1-II.4","Rekognisi DPRPS","done",
@@ -141,6 +141,7 @@ const DISC = [
   ["7 judul karya mahasiswa muncul identik di Tabel 1-I.12 (Prestasi Mahasiswa) dan draft Tabel 1-II.1 - kemungkinan disengaja (beda indikator 14A vs 18A), belum dikonfirmasi ke prodi.","open"],
   ["3 luaran berisi laporan PkM tetap dihitung di Tabel 1-II.2 baris 'nasional terakreditasi' - keputusan eksplisit user, dicatat bukan bug.","decided"],
   ["4 prosiding seminar dimasukkan ke baris Seminar Nasional/Internasional di Tabel 1-II.2 - keputusan eksplisit user, dicatat bukan bug.","decided"],
+  ["v27: dari 4 prosiding di atas, cuma 3 file sumber yang ketemu lagi (2 seminar nasional TS-1/2025 + 1 seminar internasional TS-1/2025). File ke-4 (seminar nasional TS/2026) TIDAK ketemu di folder 'Jurnal Dosen' maupun 'PROSIDING' (yang terakhir cuma ada subfolder 2024 &amp; 2025, tidak ada 2026) - kemungkinan file-nya belum diupload ulang atau lokasinya beda dari yang dicek sesi ini. Sel terkait di daftar-pustaka-1ii2.html ditandai &quot;menyusul&quot;.","open"],
   ["Kadek Indra Wijaya &amp; Akkas SEMPAT muncul di roster 12-nama DPR versi Data LKPS DKV.xlsx (kemungkinan salah entri sumber) - user KONFIRMASI keduanya BUKAN DPR, tetap DTT. Tidak ditambahkan ke Tabel 1-I.4.","fixed"],
   ["Tabel 1-I.13 TS-3 kontradiksi lulusan(1)-vs-terlacak(2) - SELESAI: resync v17 dari live doc kasih data lengkap TS-5 s.d TS yang konsisten (TS-3: lulusan=3, terlacak=2). Revert patch keliru Antigravity/Gemini yang sempat ubah terlacak 2→1 berdasar data lama.","fixed"],
   ["Bug hyperlink Luaran DPR ketuker antar 4 dosen (Retnoning/Kadek/Ida Bagus/Yanes) - sudah diperbaiki, diverifikasi via cross-check konten file.","fixed"],
