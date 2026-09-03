@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<title>Status Eviden - DKV ISBI Tanah Papua</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root{
+    --bg:#f7f7f9; --card:#fff; --text:#1a1a1a; --muted:#6b7280; --border:#e5e7eb;
+    --done:#16a34a; --done-bg:#dcfce7;
+    --partial:#d97706; --partial-bg:#fef3c7;
+    --empty:#dc2626; --empty-bg:#fee2e2;
+    --na:#6b7280; --na-bg:#f3f4f6;
+    --info:#2563eb; --info-bg:#dbeafe;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --bg:#15161a; --card:#1e2025; --text:#e8e8ea; --muted:#9aa0aa; --border:#31333a;
+      --done-bg:#0f2e1c; --partial-bg:#3a2a0a; --empty-bg:#3a1414; --na-bg:#26282e; --info-bg:#0f2444; }
+  }
+  :root[data-theme="dark"]{ --bg:#15161a; --card:#1e2025; --text:#e8e8ea; --muted:#9aa0aa; --border:#31333a;
+    --done-bg:#0f2e1c; --partial-bg:#3a2a0a; --empty-bg:#3a1414; --na-bg:#26282e; --info-bg:#0f2444; }
+  :root[data-theme="light"]{
+    --bg:#f7f7f9; --card:#fff; --text:#1a1a1a; --muted:#6b7280; --border:#e5e7eb;
+    --done-bg:#dcfce7; --partial-bg:#fef3c7; --empty-bg:#fee2e2; --na-bg:#f3f4f6; --info-bg:#dbeafe;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.5}
+  .wrap{max-width:1100px;margin:0 auto;padding:28px 20px 60px}
+  h1{font-size:1.4rem;margin:0 0 4px}
+  h2{font-size:1.1rem;margin:32px 0 4px}
+  .sub{color:var(--muted);font-size:.9rem;margin:0 0 20px}
+  nav.top a{color:var(--info);text-decoration:none;font-size:.85rem}
+  .summary{display:flex;gap:10px;flex-wrap:wrap;margin:16px 0 8px}
+  .stat{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:10px 16px;min-width:110px}
+  .stat b{display:block;font-size:1.3rem}
+  .stat.done b{color:var(--done)} .stat.partial b{color:var(--partial)} .stat.empty b{color:var(--empty)} .stat.info b{color:var(--info)}
+  .lead{font-size:.87rem;color:var(--muted);margin:0 0 8px}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:16px 18px;margin-bottom:18px}
+  table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--border);border-radius:10px;overflow:hidden}
+  thead th{text-align:left;font-size:.76rem;text-transform:uppercase;letter-spacing:.03em;color:var(--muted);
+    padding:9px 12px;border-bottom:1px solid var(--border)}
+  tbody td{padding:9px 12px;border-bottom:1px solid var(--border);vertical-align:top;font-size:.88rem}
+  tbody tr:last-child td{border-bottom:none}
+  .kode{font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:600}
+  .badge{display:inline-block;padding:2px 10px;border-radius:999px;font-size:.74rem;font-weight:600;white-space:nowrap}
+  .badge.done{background:var(--done-bg);color:var(--done)}
+  .badge.partial{background:var(--partial-bg);color:var(--partial)}
+  .badge.empty{background:var(--empty-bg);color:var(--empty)}
+  .badge.info{background:var(--info-bg);color:var(--info)}
+  .note{color:var(--muted);font-size:.84rem}
+  .tier{margin:18px 0 6px;font-size:.92rem;font-weight:700;display:flex;align-items:center;gap:8px}
+  .tier .n{background:var(--text);color:var(--bg);border-radius:999px;width:22px;height:22px;display:inline-flex;
+    align-items:center;justify-content:center;font-size:.72rem}
+  .tierdesc{font-size:.82rem;color:var(--muted);margin:0 0 8px}
+  .validated-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:6px 14px;font-size:.86rem}
+  .validated-grid div{padding:3px 0;border-bottom:1px dashed var(--border)}
+  .validated-grid b{font-variant-numeric:tabular-nums;margin-right:6px}
+  details{margin-bottom:10px}
+  summary{cursor:pointer;font-weight:600;font-size:.9rem;padding:4px 0}
+  footer{margin-top:26px;color:var(--muted);font-size:.78rem}
+  code{background:var(--na-bg);padding:1px 5px;border-radius:4px;font-size:.85em}
+</style>
+
+<div class="wrap">
+  <nav class="top"><a href="index.html">&larr; Checklist LKPS</a></nav>
+  <h1>Status Eviden - DKV ISBI Tanah Papua</h1>
+  <p class="sub">70 kode eviden BAN-PT IAPS 5.1 &middot; sumber: sheet <i>Monitoring Eviden DKV 2026</i> + <code>Daftar Periksa Bukti Akreditasi Prodi DKV.xlsx</code> &middot; per 2026-09-03</p>
+
+  <div class="summary" id="summary"></div>
+
+  <h2>&#9989; Sudah divalidasi (33)</h2>
+  <p class="lead">Isi dokumennya sudah dicek langsung (bukan cuma nama file), status di sheet = Divalidasi.</p>
+  <div class="card"><div class="validated-grid" id="validatedGrid"></div></div>
+
+  <h2>&#128680; Kritis &amp; perlu perbaikan (29) &mdash; diurut dari yang termudah</h2>
+  <p class="lead">Urutan bukan berdasarkan urgensi kriteria, tapi <b>seberapa cepat bisa dibereskan</b>: yang tinggal sahkan/upload duluan, yang butuh pihak luar/kosong total belakangan. Kalau ada kode lain di kluster yang sama <b>sudah Lengkap</b>, itu jadi template siap-pakai &mdash; nurunin efforf, sama kayak PKM-01/02/05 yang bisa nyontek format dari PKM-03/04/06/07/08 yang udah jadi.</p>
+  <div id="tiers"></div>
+
+  <h2>&#9888;&#65039; Kenapa "Terkumpul" belum tentu "Divalidasi"</h2>
+  <p class="lead">Beberapa kode yang filenya sudah ada di Drive sengaja <b>ditahan</b> statusnya, bukan lupa dinaikin:</p>
+  <div class="card">
+    <table>
+      <thead><tr><th style="width:70px">Kode</th><th>Nama Bukti</th><th style="width:110px">Status Sheet</th><th>Kenapa ditahan</th></tr></thead>
+      <tbody id="heldRows"></tbody>
+    </table>
+  </div>
+
+  <h2>&#128269; Checklist bilang "Ada", tapi belum ketemu filenya di tracker Drive</h2>
+  <p class="lead">10 kode ini ditandai <code>Ada/Lengkap</code> di checklist prodi, tapi sheet tracker masih <code>Belum Mulai</code> &mdash; artinya <b>belum ada file dengan prefix kode itu tersinkron ke folder tracker</b>. Perlu dicek: filenya ketinggalan upload, atau memang belum ada dan checklist-nya kepencet salah.</p>
+  <div class="card">
+    <details open>
+    <summary>Perhatian khusus: BM-11 (Sertifikat Akreditasi)</summary>
+    <p class="note" style="margin:6px 0 0">Sesi sebelumnya ketemu file bernama <code>BM-11_Sertifikat-Akreditasi.pdf.pdf</code> di folder lokal &mdash; MD5-nya <b>identik</b> sama <code>SK TIM AKREDITASI PRODI DKV.pdf</code> (itu SK panitia, bukan sertifikat akreditasi asli). File itu sudah di-rename biar gak ketriger Apps Script. Sertifikat Akreditasi asli <b>belum pernah ditemukan</b> di manapun &mdash; kalau checklist bilang "Ada/Lengkap" buat BM-11, itu perlu diverifikasi ulang sumbernya, jangan diterima begitu saja.</p>
+    </details>
+    <table>
+      <thead><tr><th style="width:70px">Kode</th><th>Nama Bukti</th></tr></thead>
+      <tbody id="missingSyncRows"></tbody>
+    </table>
+  </div>
+
+  <footer>Dibuat dari cross-check sheet eviden &amp; checklist prodi, 2026-09-03. Bukan pengganti verifikasi resmi asesor.</footer>
+</div>
+
+<script>
+const VALIDATED = [
+["PEN-01","SK/Surat Tugas Tim Penyusun LED"],["BM-01","Kebijakan SPMI"],["BM-02","Manual/Pedoman SPMI PPEPP"],
+["BM-03","Buku Standar Mutu/Standar SPMI"],["BM-04","SK/Struktur Organisasi LPMPP"],["BM-05","Panduan Pembelajaran, Kurikulum, Penilaian"],
+["BM-06","Form/Matriks PPEPP Program Studi"],["BM-07","Laporan Monitoring Pembelajaran"],["BM-08","Laporan Audit Mutu Internal"],
+["BM-09","Notulen dan Rekomendasi RTM"],["RP-01","Dokumen Kurikulum Program Studi"],["RP-03","Rekap Dosen Penghitung Rasio"],
+["RP-04","Rekap Dosen Tidak Tetap dan Praktisi"],["RP-05","Rekap EWMP/Beban Kerja Dosen"],["RP-06","Rekap Tenaga Kependidikan"],
+["RP-07","Sarana-Prasarana Pendidikan dan Praktik"],["RP-09","Biaya Operasional dan Investasi Pendidikan"],
+["RP-11","Standar/Pedoman Proses Pembelajaran *"],["RP-12","Kumpulan RPS dan Kontrak Kuliah"],["RP-13","Standar/Pedoman Penilaian Mahasiswa *"],
+["RP-14","Rekap Lulusan, Masa Studi, Prestasi Mahasiswa"],["RP-15","Pengukuran dan Evaluasi CPL"],["RP-16","Kepuasan Pengguna Lulusan"],
+["RP-17","Laporan Tracer Study"],["RP-18","Rekap Mahasiswa Baru dan Aktif"],["RL-02","Pedoman Penelitian"],
+["RL-05","Publikasi, HKI, Karya, Produk/Jasa Penelitian"],["PKM-03","Rekap PkM DPR bersama Mahasiswa"],
+["PKM-04","Laporan Kepuasan Mitra PkM"],["PKM-06","Rekap Luaran dan Rekognisi PkM"],["AK-01","SOTK/Statuta/Tupoksi UPPS-Prodi"],
+["AK-05","Kode Etik dan Lembaga/Tim Etik"],["DM-06","Rekap Pengakuan dan Apresiasi Stakeholder"]
+];
+
+const HELD = [
+["RL-01","Rencana Induk/Peta Jalan Penelitian","Terkumpul","Kerangka RIP sudah lengkap, tapi data empiris (realisasi dana, daftar hibah) dari LPPM belum masuk."],
+["RL-03","Rekap Penelitian DPR bersama Mahasiswa","Terkumpul","Dokumen ada, belum disahkan lewat SK."],
+["RP-11 *","Standar/Pedoman Proses Pembelajaran","Divalidasi (dengan catatan)","Sumbernya nyempil di file lain, isinya kelihatan copy dari template institusi lain (sisa referensi “Tapanuli”/“Institut Teknologi Del”). Dinaikin ke Divalidasi atas persetujuan eksplisit, catatan caveat tetap ditulis di kolom Catatan Validasi."],
+["RP-13 *","Standar/Pedoman Penilaian Mahasiswa","Divalidasi (dengan catatan)","Sumber dan masalah sama dengan RP-11 &mdash; satu file yang sama dipakai untuk dua kode ini."]
+];
+
+const MISSING_SYNC = [
+["PEN-02","Jadwal Kerja Penyusunan LED-LKPS"],["PEN-03","Berita Acara Validasi Data LED-LKPS"],
+["BM-11","Sertifikat Akreditasi Program Studi"],["RP-02","SK Penetapan Kurikulum"],
+["PKM-07","Laporan Dampak PkM"],["PKM-08","Rekap Sumber dan Realisasi Dana PkM"],
+["DM-03","Laporan Program Pengembangan sesuai Renstra"],["SUP-01","Matriks Kesesuaian LED-LKPS-Bukti"],
+["SUP-02","Register Dokumen Mutu Program Studi"],["SUP-03","Formulir Validasi LKPS"]
+];
+
+const TIERS = [
+{ label: "Tier 1 &mdash; tinggal sahkan/upload, dokumennya sudah ada", items: [
+  ["RL-02","Pedoman Penelitian","Perlu disahkan melalui SK. (Sudah divalidasi di sheet, tinggal proses administratif formal.)"],
+  ["RL-03","Rekap Penelitian DPR bersama Mahasiswa","Perlu disahkan melalui SK &mdash; sama persis kasusnya dengan RL-02, bisa dikerjakan bareng."],
+  ["RL-08","Rekap Sumber dan Realisasi Dana Penelitian","Laporan keuangannya sudah ada, cuma belum diunggah ke Drive."],
+  ["AK-11","Register Pengaduan dan Tindak Lanjut","Baru tersedia SK Tim &mdash; tinggal lengkapi isi registernya, kerangka sudah jalan."]
+]},
+{ label: "Tier 2 &mdash; kerjaan mekanis, ada estimasi waktu, gak nunggu pihak luar", items: [
+  ["RP-08","Dokumen Implementasi K3","Prodi sendiri sudah kasih estimasi &plusmn;7 hari untuk siapkan."],
+  ["RP-10","Dokumen Sistem TIK Akademik","Sama, estimasi &plusmn;7 hari dari prodi."],
+  ["RL-06","Rekap Sitasi dan Rekognisi Penelitian Dosen/Mahasiswa","Tinggal cari manual di Google Scholar per DPRPS &mdash; kerja teknis, tidak menunggu keputusan siapa pun."]
+]},
+{ label: "Tier 3 &mdash; draft sudah ada, tinggal dilengkapi/disahkan", items: [
+  ["DM-02","Renstra/Rencana Pengembangan Prodi-UPPS","Datanya masih berupa draft, tinggal difinalisasi."],
+  ["AK-02","Dokumen Sistem Tata Pamong dan GUG","Buku Pedoman Kepakaran Dosen masih draft, perlu disahkan."],
+  ["AK-07","Pedoman PMB dan Akses Mahasiswa","Pedomannya ada, belum dilengkapi SK."],
+  ["AK-10","Bukti Layanan Bersih dan Profesional","Sudah ada 4 dokumen parsial (Pakta Integritas, Komitmen Bersama, Publikasi Website, Pencanangan) &mdash; tinggal dirangkai jadi satu bukti utuh."]
+]},
+{ label: "Tier 4 &mdash; belum ada dokumennya sendiri, tapi ada template dari kode sekluster yang sudah Lengkap", items: [
+  ["PKM-01","Rencana Induk/Peta Jalan PkM","Kosong, tapi RL-01 (RIP Penelitian versi prodi) sudah lengkap strukturnya (Bab I-VIII) &mdash; tinggal adaptasi formatnya ke PkM. PKM-03/04/06/07/08 juga sudah Lengkap, jadi format pelaporan cluster PkM ini sudah mapan."],
+  ["PKM-02","Pedoman Pengabdian kepada Masyarakat","Kosong sebagai dokumen berdiri sendiri, tapi kemungkinan besar isinya sudah ada digabung dalam “Panduan Penelitian dan Pengabdian Masyarakat ISBI TP 2026” (RL-02) &mdash; tinggal dipisah/dirujuk, bukan ditulis dari nol."],
+  ["PKM-05","Matriks Integrasi PkM ke Mata Kuliah","Kosong &mdash; RL-04 (versi Penelitian) juga kosong jadi gak ada contoh langsung, tapi struktur tabelnya bisa nyontek matriks CPL/mata kuliah yang sudah ada di RP-15."]
+]},
+{ label: "Tier 5 &mdash; butuh pihak eksternal/data dari luar prodi", items: [
+  ["AK-04","Bukti Kepemimpinan Operasional, Organisasional, Publik","PK Rektor perlu disiapkan dari tim SAKIP &mdash; di luar kendali prodi."],
+  ["AK-06","Dokumen Layanan Mahasiswa","Data belum tersedia dari UPPS."],
+  ["RL-07","Bukti Sistem Informasi/Dokumentasi Penelitian","Belum punya repository resmi yang disahkan &mdash; butuh setup sistem, bukan cuma tulis dokumen."]
+]},
+{ label: "Tier 6 &mdash; kosong total, belum ada arah atau contoh sama sekali", items: [
+  ["RL-04","Matriks Integrasi Penelitian ke Mata Kuliah","Belum pernah dilakukan integrasinya secara nyata &mdash; perlu kerja substantif dulu, baru bisa didokumentasikan."],
+  ["PEN-04","Daftar Hadir/Notulen Pelibatan Pemangku Kepentingan",""],
+  ["BM-06","Form/Matriks PPEPP Program Studi",""],
+  ["BM-10","Laporan Implementasi SPMI dan Validasi PD Dikti",""],
+  ["AK-03","Bukti Pengelolaan Data Akademik Berbasis TIK","Perlu disiapkan terlebih dahulu."],
+  ["AK-08","Kebijakan Suasana Akademik","Pedomannya belum ada."],
+  ["AK-09","Laporan Survei Kepuasan Tata Pamong dan Layanan",""],
+  ["AK-12","Matriks Identifikasi dan Mitigasi Risiko Prodi","Data belum tersedia."],
+  ["DM-01","Dokumen Penetapan Visi Keilmuan dan Tujuan Prodi","Data belum tersedia."],
+  ["DM-04","Laporan Evaluasi Ketercapaian Tujuan Prodi","Data belum tersedia."],
+  ["DM-05","Dokumen Benchmarking Program Studi","Data belum tersedia."]
+]}
+];
+
+document.getElementById("summary").innerHTML = `
+  <div class="stat done"><b>33</b>Divalidasi</div>
+  <div class="stat partial"><b>10</b>Ada Perlu Perbaikan</div>
+  <div class="stat empty"><b>19</b>Belum Ada</div>
+  <div class="stat info"><b>10</b>Ada di checklist, belum ketemu di Drive</div>`;
+
+const vg = document.getElementById("validatedGrid");
+VALIDATED.forEach(([kode,nama])=>{
+  const d = document.createElement("div");
+  d.innerHTML = `<b>${kode}</b>${nama}`;
+  vg.appendChild(d);
+});
+
+const tiersEl = document.getElementById("tiers");
+TIERS.forEach((tier, ti)=>{
+  const h = document.createElement("div");
+  h.className = "tier";
+  h.innerHTML = `<span class="n">${ti+1}</span> ${tier.label} (${tier.items.length})`;
+  tiersEl.appendChild(h);
+  const table = document.createElement("table");
+  table.innerHTML = `<thead><tr><th style="width:70px">Kode</th><th style="width:260px">Nama Bukti</th><th>Kenapa masuk tier ini</th></tr></thead><tbody></tbody>`;
+  const tb = table.querySelector("tbody");
+  tier.items.forEach(([kode,nama,ket])=>{
+    const tr = document.createElement("tr");
+    tr.innerHTML = `<td class="kode">${kode}</td><td>${nama}</td><td class="note">${ket}</td>`;
+    tb.appendChild(tr);
+  });
+  tiersEl.appendChild(table);
+});
+
+const heldRows = document.getElementById("heldRows");
+HELD.forEach(([kode,nama,status,ket])=>{
+  const tr = document.createElement("tr");
+  const badgeClass = status.startsWith("Divalidasi") ? "partial" : "empty";
+  tr.innerHTML = `<td class="kode">${kode}</td><td>${nama}</td><td><span class="badge ${badgeClass}">${status}</span></td><td class="note">${ket}</td>`;
+  heldRows.appendChild(tr);
+});
+
+const msRows = document.getElementById("missingSyncRows");
+MISSING_SYNC.forEach(([kode,nama])=>{
+  const tr = document.createElement("tr");
+  tr.innerHTML = `<td class="kode">${kode}</td><td>${nama}</td>`;
+  msRows.appendChild(tr);
+});
+</script>
+</html>
