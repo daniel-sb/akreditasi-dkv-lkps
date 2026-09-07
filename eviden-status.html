@@ -68,6 +68,33 @@
 
   <div class="summary" id="summary"></div>
 
+  <h2>&#127793; Ditemukan sesi 2026-09-08 &mdash; distage lokal, belum sync Drive/Sheet (15)</h2>
+  <p class="lead">File baru ketemu di <code>D:\Akreditasi</code> root, sudah dicek isi (bukan cuma nama file) dan dicopy ke staging lokal <code>_UPLOAD_EVIDEN\</code> dengan prefix kode. <b>Belum diupload ke tracker Drive, belum di-sync Apps Script</b> &mdash; jadi status di Sheet (dan angka Divalidasi/Tier di halaman ini) belum berubah. Perlu Daniel upload ke Drive tracker lalu jalanin <code>syncFolderToSheet</code> manual.</p>
+  <div class="card">
+    <table>
+      <thead><tr><th style="width:70px">Kode</th><th>File</th><th>Catatan</th></tr></thead>
+      <tbody>
+        <tr><td class="kode">RP-07</td><td>Daftar Sarana-Prasarana Pendidikan, KIR Prodi DKV, KIR Ruang Kelas</td><td class="note">Sebelumnya genuinely nihil &mdash; definisi RP-07 persis "Daftar Sarana-Prasarana Pendidikan".</td></tr>
+        <tr><td class="kode">DM-02</td><td>RIP ISBI Tanah Papua (institut), Draft Renstra</td><td class="note">Sebelumnya nihil. RIP dicek isi &mdash; konten asli level institut ("RENCANA INDUK PENGEMBANGAN INSTITUT..."), beda dari file RL-01 yang judulnya mirip tapi isinya RIP Penelitian.</td></tr>
+        <tr><td class="kode">DM-05</td><td>Laporan Benchmarking SPMI Prodi DKV</td><td class="note">Sebelumnya nihil.</td></tr>
+        <tr><td class="kode">BM-11</td><td>Izin Penyelenggaraan Prodi ISBI Tanah Papua</td><td class="note">Bukan sertifikat akreditasi asli (itu belum pernah ketemu manapun) &mdash; izin operasional, dokumen legal terdekat yang ada.</td></tr>
+        <tr><td class="kode">RP-15</td><td>Instrumen CPL Lengkap, Laporan Pengukuran CPL DKV 2023-2025</td><td class="note">Supplement &mdash; kode ini sudah Divalidasi, nambah bukti pendukung.</td></tr>
+        <tr><td class="kode">BM-03</td><td>Nasmik (naskah akademik Buku 1), Buku 1 revisi target, Sosialisasi 10 Standar</td><td class="note">Supplement &mdash; kode ini sudah Divalidasi.</td></tr>
+        <tr><td class="kode">BM-07</td><td>Laporan EDOM TS-4 s.d. TS, Rekap EDOM</td><td class="note">Supplement &mdash; kode ini sudah Divalidasi.</td></tr>
+        <tr><td class="kode">BM-09</td><td>Notulensi Lengkap RTM DKV TA2023-2024 (12 Juni 2024)</td><td class="note">Notulen naratif ASLI dengan temuan nyata (kontribusi Prodi DKV &lt;15% capaian institusi, RTL 2 poin) &mdash; ngisi kekosongan RTL yang blank di versi tabel yang udah disync duluan. File <code>RTM 2023_2024.pdf</code> yang beda nama dicek juga &mdash; ternyata duplikat isi persis dari yang udah disync, tidak distage.</td></tr>
+      </tbody>
+    </table>
+    <details style="margin-top:10px">
+      <summary>Ditemukan tapi SENGAJA belum dikasih kode (institusi-level, gak cocok jelas ke definisi 70-kode)</summary>
+      <p class="note" style="margin:6px 0 0">
+        <b>LAKIN ISBI TP 2020/2021/2022/2023 + Lakin 2025</b> &mdash; laporan kinerja tahunan pemerintah, level institut. Kandidat terdekat AK-04 (Bukti Kepemimpinan Operasional) tapi bukan match judul persis, dan ranah AK itu bukan domain Daniel.<br>
+        <b>CALK Audited 2023/2024/2025</b> (Catatan atas Laporan Keuangan diaudit) &mdash; laporan keuangan institut diaudit; tidak ada kode di daftar 70 yang minta laporan keuangan diaudit penuh (RP-09 minta rekap biaya operasional program-level, beda level/scope).<br>
+        <b>Laporan SIEVO.pdf</b> &mdash; "Laporan Evaluasi Organisasi ISBI Tanah Papua 2021", lama dan institut-wide, relevansi ke DKV belum jelas.<br>
+        <b>2 file kurikulum lama</b> (SK Rektor 005/ISBI-TP/SK/2019) &mdash; superseded, RP-01 yang sudah distage headernya "TAHUN 2026", kurikulum baru sudah benar dipakai, file lama ini tidak dibutuhkan.
+      </p>
+    </details>
+  </div>
+
   <h2>&#9989; Sudah divalidasi (33)</h2>
   <p class="lead">Isi dokumennya sudah dicek langsung (bukan cuma nama file), status di sheet = Divalidasi.</p>
   <div class="card"><div class="validated-grid" id="validatedGrid"></div></div>
