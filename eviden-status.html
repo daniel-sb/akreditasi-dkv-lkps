@@ -64,33 +64,50 @@
 <div class="wrap">
   <nav class="top"><a href="index.html">&larr; Checklist LKPS</a></nav>
   <h1>Status Eviden - DKV ISBI Tanah Papua</h1>
-  <p class="sub">70 kode eviden BAN-PT IAPS 5.1 &middot; sumber: sheet <i>Monitoring Eviden DKV 2026</i> + <code>Daftar Periksa Bukti Akreditasi Prodi DKV.xlsx</code> &middot; per 2026-09-03</p>
+  <p class="sub">70 kode eviden BAN-PT IAPS 5.1 &middot; sumber: sheet <i>Monitoring Eviden DKV 2026</i> + <code>Daftar Periksa Bukti Akreditasi Prodi DKV.xlsx</code> &middot; cross-check per 2026-09-03, catatan tambahan s/d 2026-09-10</p>
 
   <div class="summary" id="summary"></div>
 
-  <h2>&#127793; Ditemukan sesi 2026-09-08 &mdash; distage lokal, belum sync Drive/Sheet (15)</h2>
-  <p class="lead">File baru ketemu di <code>D:\Akreditasi</code> root, sudah dicek isi (bukan cuma nama file) dan dicopy ke staging lokal <code>_UPLOAD_EVIDEN\</code> dengan prefix kode. <b>Belum diupload ke tracker Drive, belum di-sync Apps Script</b> &mdash; jadi status di Sheet (dan angka Divalidasi/Tier di halaman ini) belum berubah. Perlu Daniel upload ke Drive tracker lalu jalanin <code>syncFolderToSheet</code> manual.</p>
+  <h2>&#127793; Tambahan bukti sesi 2026-09-08 s/d 2026-09-10 &mdash; sudah di Drive tracker, belum di-sync ke Sheet</h2>
+  <p class="lead">Semua file di bawah sudah dicek <b>isinya</b> (bukan cuma nama file) dan sudah <b>di-push ke folder tracker Drive</b> (via <code>rclone</code>, per kode). Yang <b>belum</b>: Daniel jalanin <code>syncFolderToSheet</code> manual di Apps Script &mdash; sampai itu dilakukan, status Sheet dan angka Divalidasi/Tier di halaman ini <b>tidak berubah</b>. Status Sheet per 2026-09-10 masih: 33 Divalidasi / 11 Terkumpul / 26 Belum Mulai / 0 Proses (47%).</p>
   <div class="card">
+    <p class="note" style="margin:0 0 10px"><b>Batch 2026-09-08</b> &mdash; sweep <code>D:\Akreditasi</code> root + folder ekspor WhatsApp tim akreditasi.</p>
     <table>
       <thead><tr><th style="width:70px">Kode</th><th>File</th><th>Catatan</th></tr></thead>
       <tbody>
         <tr><td class="kode">RP-07</td><td>Daftar Sarana-Prasarana Pendidikan, KIR Prodi DKV, KIR Ruang Kelas</td><td class="note">Sebelumnya genuinely nihil &mdash; definisi RP-07 persis "Daftar Sarana-Prasarana Pendidikan".</td></tr>
         <tr><td class="kode">DM-02</td><td>RIP ISBI Tanah Papua (institut), Draft Renstra</td><td class="note">Sebelumnya nihil. RIP dicek isi &mdash; konten asli level institut ("RENCANA INDUK PENGEMBANGAN INSTITUT..."), beda dari file RL-01 yang judulnya mirip tapi isinya RIP Penelitian.</td></tr>
         <tr><td class="kode">DM-05</td><td>Laporan Benchmarking SPMI Prodi DKV</td><td class="note">Sebelumnya nihil.</td></tr>
+        <tr><td class="kode">BM-06</td><td>Formulir Monitoring Tahap 2 Pelaksanaan Perkuliahan LPMPP</td><td class="note">Sebelumnya nihil (Tier 6). Dari ekspor WA &mdash; dicek isi = form/instrumen PPEPP kosongan yang match definisi BM-06.</td></tr>
+        <tr><td class="kode">PKM-07</td><td>21 file 1 kegiatan PkM SD YPK Kwadeware (Laporan Dampak + kit instrumen)</td><td class="note">Sebelumnya di daftar "checklist bilang Ada tapi belum ketemu". Dari ekspor WA.</td></tr>
         <tr><td class="kode">BM-11</td><td>Izin Penyelenggaraan Prodi ISBI Tanah Papua</td><td class="note">Bukan sertifikat akreditasi asli (itu belum pernah ketemu manapun) &mdash; izin operasional, dokumen legal terdekat yang ada.</td></tr>
-        <tr><td class="kode">RP-15</td><td>Instrumen CPL Lengkap, Laporan Pengukuran CPL DKV 2023-2025</td><td class="note">Supplement &mdash; kode ini sudah Divalidasi, nambah bukti pendukung.</td></tr>
-        <tr><td class="kode">BM-03</td><td>Nasmik (naskah akademik Buku 1), Buku 1 revisi target, Sosialisasi 10 Standar</td><td class="note">Supplement &mdash; kode ini sudah Divalidasi.</td></tr>
-        <tr><td class="kode">BM-07</td><td>Laporan EDOM TS-4 s.d. TS, Rekap EDOM</td><td class="note">Supplement &mdash; kode ini sudah Divalidasi.</td></tr>
-        <tr><td class="kode">BM-09</td><td>Notulensi Lengkap RTM DKV TA2023-2024 (12 Juni 2024)</td><td class="note">Notulen naratif ASLI dengan temuan nyata (kontribusi Prodi DKV &lt;15% capaian institusi, RTL 2 poin) &mdash; ngisi kekosongan RTL yang blank di versi tabel yang udah disync duluan. File <code>RTM 2023_2024.pdf</code> yang beda nama dicek juga &mdash; ternyata duplikat isi persis dari yang udah disync, tidak distage.</td></tr>
+        <tr><td class="kode">BM-03 / BM-07 / RP-15</td><td>Nasmik Buku 1, Buku 1 revisi target, Sosialisasi 10 Standar (BM-03); Laporan &amp; Rekap EDOM (BM-07); Instrumen &amp; Laporan Pengukuran CPL 2023-2025 (RP-15)</td><td class="note">Supplement &mdash; kode-kode ini sudah Divalidasi, nambah bukti pendukung.</td></tr>
+        <tr><td class="kode">BM-05 / RP-12 / RP-14</td><td>Peraturan Rektor No 2/2025 Peraturan Akademik (BM-05); RPS Psikologi Komunikasi (RP-12); Transkrip Lulusan 2023-2025, Sidang Senat Wisuda 2026 (RP-14)</td><td class="note">Supplement, dari ekspor WA.</td></tr>
+        <tr><td class="kode">BM-09</td><td>Notulensi Lengkap RTM DKV TA2023-2024 (12 Juni 2024)</td><td class="note">Notulen naratif ASLI dengan temuan nyata (kontribusi Prodi DKV &lt;15% capaian institusi, RTL 2 poin). File <code>RTM 2023_2024.pdf</code> beda nama dicek juga &mdash; duplikat isi persis, tidak distage.</td></tr>
       </tbody>
     </table>
-    <details style="margin-top:10px">
+    <p class="note" style="margin:16px 0 10px"><b>Batch 2026-09-10</b> &mdash; triase folder Drive sumber mentah (<code>1wabZtY…</code>, 1084 file, mayoritas berkas per-dosen LKPS di luar scope). 65 file institusi/prodi dicek satu-satu; 24 genuinely baru di-push ke tracker.</p>
+    <table>
+      <thead><tr><th style="width:70px">Kode</th><th>File</th><th>Catatan</th></tr></thead>
+      <tbody>
+        <tr><td class="kode">AK-01</td><td>SK Rektor 159/IT12/HK/2025 Struktur Organisasi &amp; GKM Prodi DKV (versi lengkap + lampiran)</td><td class="note">Kode sudah Divalidasi. Yang ada di Drive sebelumnya cuma docx diktum tanpa lampiran &mdash; versi ini PDF 5 halaman lengkap dengan lampiran struktur &amp; personalia. Ini juga nutup pertanyaan lama "SK GKM prodi belum ketemu kodenya" &mdash; jawabannya AK-01 (bukan BM-04, itu buat struktur LPMPP institut).</td></tr>
+        <tr><td class="kode">BM-02</td><td>Manual Mutu Penelitian, Manual Mutu Pengabdian, Daftar Manual &amp; Formulir DKV, Buku Pedoman Pendokumentasian SPMI Prodi DKV</td><td class="note">Supplement (kode sudah Divalidasi). Melengkapi Manual Mutu Pendidikan yang sudah ada di Drive.</td></tr>
+        <tr><td class="kode">BM-05</td><td>SK Rektor 145/IT12/HK/2018 Penetapan Buku Pedoman Kurikulum</td><td class="note">Supplement &mdash; dasar hukum Buku Pedoman Kurikulum yang sudah ada.</td></tr>
+        <tr><td class="kode">BM-08</td><td>Laporan Evaluasi Mutu (AMI) DKV 2024 (47 halaman) + Surat Tugas WR-I Pemeriksaan SPI</td><td class="note">Supplement &mdash; laporan AMI naratif lengkap 2024 (sebelumnya AMI cuma dalam bentuk workbook per-TS).</td></tr>
+        <tr><td class="kode">BM-09</td><td>2 siklus RTM baru: RTM TA2022/2023 (Notulensi + Undangan/Agenda); RTM 17 Sept 2024 dipicu audit SPI (Notulensi + Daftar Hadir + RTL)</td><td class="note">Supplement &mdash; event berbeda dari RTM 12 Juni 2024. Nambah cakupan multi-siklus RTM. Catatan: 2 docx "RTM 2024／2025" &amp; "RTM 2025／2026" di folder itu KEMBAR PERSIS isinya RTM 12 Juni 2024 &mdash; nama folder nyesatin, tidak distage.</td></tr>
+        <tr><td class="kode">RP-03</td><td>SK Dosen Pembimbing Skripsi 2022/23, 2024/25, 2025/26</td><td class="note">Supplement &mdash; data multi-tahun (sebelumnya cuma 1 tahun).</td></tr>
+        <tr><td class="kode">RP-07</td><td>8 dokumen konstruksi Kelas Tribun Uncen (as-built, RAB, RKS, gambar eksisting/rencana)</td><td class="note">Supplement &mdash; bukti pengembangan fisik ruang kelas DKV di kompleks UNCEN Atas.</td></tr>
+      </tbody>
+    </table>
+    <p class="note" style="margin:14px 0 0"><b>&#9888;&#65039; Temuan penting 2026-09-10:</b> staging lokal <code>_UPLOAD_EVIDEN\</code> <b>tidak sinkron</b> dengan tracker Drive. Beberapa kode yang kelihatan kosong di lokal (BM-01, BM-03 Buku 2/3, AK-09) <b>ternyata sudah ada isinya di Drive</b> &mdash; kemungkinan diupload langsung (Daniel / "opencode") tanpa disalin balik ke lokal. 5 file yang sempat ke-upload dobel sesi ini sudah dihapus lagi dari Drive setelah dicek hash/teks identik. <b>Aturan ke depan: cek <code>rclone lsf</code> folder kode di Drive dulu sebelum bilang kode itu kosong.</b> Rekonsiliasi penuh 70 kode lokal&harr;Drive belum dikerjakan.</p>
+    <details style="margin-top:12px">
       <summary>Ditemukan tapi SENGAJA belum dikasih kode (institusi-level, gak cocok jelas ke definisi 70-kode)</summary>
       <p class="note" style="margin:6px 0 0">
         <b>LAKIN ISBI TP 2020/2021/2022/2023 + Lakin 2025</b> &mdash; laporan kinerja tahunan pemerintah, level institut. Kandidat terdekat AK-04 (Bukti Kepemimpinan Operasional) tapi bukan match judul persis, dan ranah AK itu bukan domain Daniel.<br>
         <b>CALK Audited 2023/2024/2025</b> (Catatan atas Laporan Keuangan diaudit) &mdash; laporan keuangan institut diaudit; tidak ada kode di daftar 70 yang minta laporan keuangan diaudit penuh (RP-09 minta rekap biaya operasional program-level, beda level/scope).<br>
         <b>Laporan SIEVO.pdf</b> &mdash; "Laporan Evaluasi Organisasi ISBI Tanah Papua 2021", lama dan institut-wide, relevansi ke DKV belum jelas.<br>
-        <b>2 file kurikulum lama</b> (SK Rektor 005/ISBI-TP/SK/2019) &mdash; superseded, RP-01 yang sudah distage headernya "TAHUN 2026", kurikulum baru sudah benar dipakai, file lama ini tidak dibutuhkan.
+        <b>File kurikulum lama</b> (SK Rektor 005/ISBI-TP/SK/2019) &mdash; superseded, RP-01 yang sudah distage headernya "TAHUN 2026", kurikulum baru sudah benar dipakai, file lama ini tidak dibutuhkan.<br>
+        <b>Pedoman Teknis Pelaporan &amp; Verifikasi SPMI Perguruan Tinggi 2026</b> &mdash; referensi nasional generik, bukan dokumen DKV/institusi spesifik.
       </p>
     </details>
   </div>
