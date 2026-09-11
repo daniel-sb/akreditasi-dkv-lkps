@@ -64,9 +64,17 @@
 <div class="wrap">
   <nav class="top"><a href="index.html">&larr; Checklist LKPS</a></nav>
   <h1>Status Eviden - DKV ISBI Tanah Papua</h1>
-  <p class="sub">70 kode eviden BAN-PT IAPS 5.1 &middot; sumber: sheet <i>Monitoring Eviden DKV 2026</i> + <code>Daftar Periksa Bukti Akreditasi Prodi DKV.xlsx</code> &middot; cross-check per 2026-09-03, catatan tambahan s/d 2026-09-10</p>
+  <p class="sub">70 kode eviden BAN-PT IAPS 5.1 &middot; sumber: sheet <i>Monitoring Eviden DKV 2026 (Solo - No PIC)</i>, dibaca langsung 2026-09-11 &middot; daftar "checklist bilang Ada" dari <code>Daftar Periksa Bukti Akreditasi Prodi DKV.xlsx</code>, cross-check 2026-09-03 (belum diverifikasi ulang)</p>
 
   <div class="summary" id="summary"></div>
+  <div class="card" style="margin-top:4px">
+    <p class="note" style="margin:0">
+      <b>Ringkasan per 2026-09-11:</b> 33 Divalidasi &middot; 11 Terkumpul &middot; 26 Belum Mulai &middot; 0 Proses &mdash; <b>47% selesai</b>.
+      Dua kode yang sempat kosong total (<b>BM-06</b>, <b>PKM-07</b>) sudah naik status sejak batch WA-folder 2026-09-08.
+      <b>PKM-01</b> baru saja diisi (2026-09-11, dokumen RIPkM sudah di Drive) tapi Sheet belum sempat di-sync &mdash; begitu Daniel jalanin <code>syncFolderToSheet</code>, ini kandidat paling siap buat pindah dari Belum Mulai.
+      Ranking 26 kode yang masih Belum Mulai, diurut dari paling gampang, ada di bawah.
+    </p>
+  </div>
 
   <h2>&#127793; Tambahan bukti sesi 2026-09-08 s/d 2026-09-10 &mdash; sudah di Drive tracker, belum di-sync ke Sheet</h2>
   <p class="lead">Semua file di bawah sudah dicek <b>isinya</b> (bukan cuma nama file) dan sudah <b>di-push ke folder tracker Drive</b> (via <code>rclone</code>, per kode). Yang <b>belum</b>: Daniel jalanin <code>syncFolderToSheet</code> manual di Apps Script &mdash; sampai itu dilakukan, status Sheet dan angka Divalidasi/Tier di halaman ini <b>tidak berubah</b>. Status Sheet per 2026-09-10 masih: 33 Divalidasi / 11 Terkumpul / 26 Belum Mulai / 0 Proses (47%).</p>
@@ -116,12 +124,16 @@
   <p class="lead">Isi dokumennya sudah dicek langsung (bukan cuma nama file), status di sheet = Divalidasi.</p>
   <div class="card"><div class="validated-grid" id="validatedGrid"></div></div>
 
-  <h2>&#128680; Kritis &amp; perlu perbaikan (29) &mdash; diurut dari yang termudah</h2>
-  <p class="lead">Urutan bukan berdasarkan urgensi kriteria, tapi <b>seberapa cepat bisa dibereskan</b>: yang tinggal sahkan/upload duluan, yang butuh pihak luar/kosong total belakangan. Kalau ada kode lain di kluster yang sama <b>sudah Lengkap</b>, itu jadi template siap-pakai &mdash; nurunin efforf, sama kayak PKM-01/02/05 yang bisa nyontek format dari PKM-03/04/06/07/08 yang udah jadi.</p>
+  <h2>&#128193; Terkumpul, belum divalidasi (11)</h2>
+  <p class="lead">Filenya sudah ada di Drive, tapi belum di-review isinya / belum resmi disahkan &mdash; lihat detail per kode di section berikutnya.</p>
+  <div class="card"><div class="validated-grid" id="terkumpulGrid"></div></div>
+
+  <h2>&#128680; Belum Mulai (26) &mdash; diurut dari yang termudah</h2>
+  <p class="lead">Urutan bukan berdasarkan urgensi kriteria, tapi <b>seberapa cepat bisa dibereskan</b>: yang tinggal sahkan/upload/rangkai duluan (datanya udah ada di suatu tempat), yang butuh pihak luar atau kerja substantif dari nol belakangan. Kalau ada kode lain di kluster yang sama <b>sudah Lengkap</b>, itu jadi template siap-pakai.</p>
   <div id="tiers"></div>
 
   <h2>&#9888;&#65039; Kenapa "Terkumpul" belum tentu "Divalidasi"</h2>
-  <p class="lead">Beberapa kode yang filenya sudah ada di Drive sengaja <b>ditahan</b> statusnya, bukan lupa dinaikin:</p>
+  <p class="lead">Detail per kode yang filenya sudah ada di Drive tapi statusnya sengaja belum dinaikin ke Divalidasi (termasuk 2 kode Divalidasi-dengan-catatan):</p>
   <div class="card">
     <table>
       <thead><tr><th style="width:70px">Kode</th><th>Nama Bukti</th><th style="width:110px">Status Sheet</th><th>Kenapa ditahan</th></tr></thead>
@@ -130,7 +142,7 @@
   </div>
 
   <h2>&#128269; Checklist bilang "Ada", tapi belum ketemu filenya di tracker Drive</h2>
-  <p class="lead">10 kode ini ditandai <code>Ada/Lengkap</code> di checklist prodi, tapi sheet tracker masih <code>Belum Mulai</code> &mdash; artinya <b>belum ada file dengan prefix kode itu tersinkron ke folder tracker</b>. Perlu dicek: filenya ketinggalan upload, atau memang belum ada dan checklist-nya kepencet salah.</p>
+  <p class="lead">9 kode ini ditandai <code>Ada/Lengkap</code> di checklist prodi (cross-check 2026-09-03, <b>belum diverifikasi ulang</b>), tapi sheet tracker masih <code>Belum Mulai</code> &mdash; artinya <b>belum ada file dengan prefix kode itu tersinkron ke folder tracker</b>. Perlu dicek: filenya ketinggalan upload, atau memang belum ada dan checklist-nya kepencet salah. (<code>PKM-07</code> dicoret dari daftar ini 2026-09-11 &mdash; sudah ketemu dan Terkumpul.)</p>
   <div class="card">
     <details open>
     <summary>Perhatian khusus: BM-11 (Sertifikat Akreditasi)</summary>
@@ -142,7 +154,7 @@
     </table>
   </div>
 
-  <footer>Dibuat dari cross-check sheet eviden &amp; checklist prodi, 2026-09-03. Bukan pengganti verifikasi resmi asesor.</footer>
+  <footer>Sheet dibaca langsung 2026-09-11; daftar checklist prodi dari cross-check 2026-09-03. Bukan pengganti verifikasi resmi asesor.</footer>
 </div>
 
 <script>
@@ -153,7 +165,7 @@ const VALIDATED = [
 ["BM-09","Notulen dan Rekomendasi RTM"],["RP-01","Dokumen Kurikulum Program Studi"],["RP-03","Rekap Dosen Penghitung Rasio"],
 ["RP-04","Rekap Dosen Tidak Tetap dan Praktisi"],["RP-05","Rekap EWMP/Beban Kerja Dosen"],["RP-06","Rekap Tenaga Kependidikan"],
 ["RP-07","Sarana-Prasarana Pendidikan dan Praktik"],["RP-09","Biaya Operasional dan Investasi Pendidikan"],
-["RP-11","Standar/Pedoman Proses Pembelajaran *"],["RP-12","Kumpulan RPS dan Kontrak Kuliah"],["RP-13","Standar/Pedoman Penilaian Mahasiswa *"],
+["RP-11 *","Standar/Pedoman Proses Pembelajaran"],["RP-12","Kumpulan RPS dan Kontrak Kuliah"],["RP-13 *","Standar/Pedoman Penilaian Mahasiswa"],
 ["RP-14","Rekap Lulusan, Masa Studi, Prestasi Mahasiswa"],["RP-15","Pengukuran dan Evaluasi CPL"],["RP-16","Kepuasan Pengguna Lulusan"],
 ["RP-17","Laporan Tracer Study"],["RP-18","Rekap Mahasiswa Baru dan Aktif"],["RL-02","Pedoman Penelitian"],
 ["RL-05","Publikasi, HKI, Karya, Produk/Jasa Penelitian"],["PKM-03","Rekap PkM DPR bersama Mahasiswa"],
@@ -161,75 +173,99 @@ const VALIDATED = [
 ["AK-05","Kode Etik dan Lembaga/Tim Etik"],["DM-06","Rekap Pengakuan dan Apresiasi Stakeholder"]
 ];
 
+const TERKUMPUL = [
+["BM-11","Sertifikat Akreditasi Program Studi"],["RL-01","Rencana Induk/Peta Jalan Penelitian"],
+["RL-03","Rekap Penelitian DPR bersama Mahasiswa"],["RL-06","Rekap Sitasi dan Rekognisi Penelitian Dosen/Mahasiswa"],
+["PKM-07","Laporan Dampak PkM"],["AK-02","Dokumen Sistem Tata Pamong dan GUG"],
+["AK-04","Bukti Kepemimpinan Operasional, Organisasional, Publik"],["AK-09","Laporan Survei Kepuasan Tata Pamong dan Layanan"],
+["DM-02","Renstra/Rencana Pengembangan Prodi-UPPS"],["DM-05","Dokumen Benchmarking Program Studi"],
+["SUP-02","Register Dokumen Mutu Program Studi"]
+];
+
 const HELD = [
+["BM-11","Sertifikat Akreditasi Program Studi","Terkumpul","File yang ada adalah Izin Penyelenggaraan Prodi (dokumen legal terdekat) &mdash; sertifikat akreditasi BAN-PT/LAM yang asli belum pernah ditemukan di manapun. Jangan disamakan."],
 ["RL-01","Rencana Induk/Peta Jalan Penelitian","Terkumpul","Kerangka RIP sudah lengkap, tapi data empiris (realisasi dana, daftar hibah) dari LPPM belum masuk."],
 ["RL-03","Rekap Penelitian DPR bersama Mahasiswa","Terkumpul","Dokumen ada, belum disahkan lewat SK."],
+["RL-06","Rekap Sitasi dan Rekognisi Penelitian Dosen/Mahasiswa","Terkumpul","Belum direview mendalam &mdash; Terkumpul artinya file ada di Drive, isi belum diverifikasi satu-satu."],
+["PKM-07","Laporan Dampak PkM","Terkumpul","2 laporan PkM riil (SD YPK Kwadeware, SD Negeri Nimbokrang I) sudah di Drive, isinya sudah dicek konten &mdash; belum resmi divalidasi di sheet."],
+["AK-02","Dokumen Sistem Tata Pamong dan GUG","Terkumpul","Buku Pedoman Kepakaran Dosen masih draft, perlu disahkan."],
+["AK-04","Bukti Kepemimpinan Operasional, Organisasional, Publik","Terkumpul","PK Rektor/bukti kepemimpinan sebagian dari tim SAKIP &mdash; belum lengkap direview."],
+["AK-09","Laporan Survei Kepuasan Tata Pamong dan Layanan","Terkumpul","SK Instrumen Kepuasan (No 160/IT12/HK/2025) sudah ada, tapi belum ada data hasil survei/analisisnya &mdash; instrumen ada, pelaksanaan belum lengkap."],
+["DM-02","Renstra/Rencana Pengembangan Prodi-UPPS","Terkumpul","RIP institut + Draft Renstra + RIP bidang Pendidikan sudah ada, tapi belum satu dokumen Renstra Prodi-UPPS yang utuh dan disahkan."],
+["DM-05","Dokumen Benchmarking Program Studi","Terkumpul","Laporan Benchmarking SPMI Prodi DKV sudah ada, belum direview/disahkan formal."],
+["SUP-02","Register Dokumen Mutu Program Studi","Terkumpul","Belum direview mendalam."],
 ["RP-11 *","Standar/Pedoman Proses Pembelajaran","Divalidasi (dengan catatan)","Sumbernya nyempil di file lain, isinya kelihatan copy dari template institusi lain (sisa referensi “Tapanuli”/“Institut Teknologi Del”). Dinaikin ke Divalidasi atas persetujuan eksplisit, catatan caveat tetap ditulis di kolom Catatan Validasi."],
 ["RP-13 *","Standar/Pedoman Penilaian Mahasiswa","Divalidasi (dengan catatan)","Sumber dan masalah sama dengan RP-11 &mdash; satu file yang sama dipakai untuk dua kode ini."]
 ];
 
 const MISSING_SYNC = [
 ["PEN-02","Jadwal Kerja Penyusunan LED-LKPS"],["PEN-03","Berita Acara Validasi Data LED-LKPS"],
-["BM-11","Sertifikat Akreditasi Program Studi"],["RP-02","SK Penetapan Kurikulum"],
-["PKM-07","Laporan Dampak PkM"],["PKM-08","Rekap Sumber dan Realisasi Dana PkM"],
+["RP-02","SK Penetapan Kurikulum"],["PKM-08","Rekap Sumber dan Realisasi Dana PkM"],
 ["DM-03","Laporan Program Pengembangan sesuai Renstra"],["SUP-01","Matriks Kesesuaian LED-LKPS-Bukti"],
-["SUP-02","Register Dokumen Mutu Program Studi"],["SUP-03","Formulir Validasi LKPS"]
+["SUP-03","Formulir Validasi LKPS"]
 ];
 
 const TIERS = [
-{ label: "Tier 1 &mdash; tinggal sahkan/upload, dokumennya sudah ada", items: [
-  ["RL-02","Pedoman Penelitian","Perlu disahkan melalui SK. (Sudah divalidasi di sheet, tinggal proses administratif formal.)"],
-  ["RL-03","Rekap Penelitian DPR bersama Mahasiswa","Perlu disahkan melalui SK &mdash; sama persis kasusnya dengan RL-02, bisa dikerjakan bareng."],
+{ label: "Tier 0 &mdash; sudah beres, tinggal nunggu sync", items: [
+  ["PKM-01","Rencana Induk/Peta Jalan PkM","Dokumen RIPkM (turunan Buku 3 Suplemen Standar Mutu PkM) sudah dibuat dan di-upload ke Drive tracker 2026-09-11. Sheet masih baca Belum Mulai karena <code>syncFolderToSheet</code> belum dijalanin &mdash; begitu di-run, ini otomatis pindah status, zero kerjaan tersisa."]
+]},
+{ label: "Tier 1 &mdash; datanya sudah ada di suatu tempat, tinggal upload/rangkai", items: [
   ["RL-08","Rekap Sumber dan Realisasi Dana Penelitian","Laporan keuangannya sudah ada, cuma belum diunggah ke Drive."],
-  ["AK-11","Register Pengaduan dan Tindak Lanjut","Baru tersedia SK Tim &mdash; tinggal lengkapi isi registernya, kerangka sudah jalan."]
+  ["AK-11","Register Pengaduan dan Tindak Lanjut","Kerangka SK Tim sudah ada &mdash; tinggal lengkapi isi registernya."],
+  ["AK-10","Bukti Layanan Bersih dan Profesional","Sudah ada 4 dokumen parsial (Pakta Integritas, Komitmen Bersama, Publikasi Website, Pencanangan) &mdash; tinggal dirangkai jadi satu bukti utuh."],
+  ["PEN-02","Jadwal Kerja Penyusunan LED-LKPS","Tim akreditasi sudah jalan dengan ritme kerja nyata sejak beberapa bulan terakhir &mdash; tinggal ditulis jadi 1 dokumen timeline formal, bukan bikin rencana baru dari nol."]
 ]},
-{ label: "Tier 2 &mdash; kerjaan mekanis, ada estimasi waktu, gak nunggu pihak luar", items: [
-  ["RP-08","Dokumen Implementasi K3","Prodi sendiri sudah kasih estimasi &plusmn;7 hari untuk siapkan."],
-  ["RP-10","Dokumen Sistem TIK Akademik","Sama, estimasi &plusmn;7 hari dari prodi."],
-  ["RL-06","Rekap Sitasi dan Rekognisi Penelitian Dosen/Mahasiswa","Tinggal cari manual di Google Scholar per DPRPS &mdash; kerja teknis, tidak menunggu keputusan siapa pun."]
+{ label: "Tier 2 &mdash; kerjaan mekanis ±1 minggu, gak nunggu pihak luar", items: [
+  ["RP-08","Dokumen Implementasi K3","Prodi sendiri sudah kasih estimasi &plusmn;7 hari untuk siapkan &mdash; dokumentasi fasilitas K3 yang sudah ada."],
+  ["RP-10","Dokumen Sistem TIK Akademik","Sama, estimasi &plusmn;7 hari &mdash; SIAKAD/website/akses data akademik sudah eksis, tinggal dikumpulkan link/screenshot-nya."],
+  ["PKM-08","Rekap Sumber dan Realisasi Dana PkM","Kemungkinan besar kasusnya sama kayak RL-08 (data keuangan PkM ada di catatan LPPM/Keuangan), tinggal direkap."]
 ]},
-{ label: "Tier 3 &mdash; draft sudah ada, tinggal dilengkapi/disahkan", items: [
-  ["DM-02","Renstra/Rencana Pengembangan Prodi-UPPS","Datanya masih berupa draft, tinggal difinalisasi."],
-  ["AK-02","Dokumen Sistem Tata Pamong dan GUG","Buku Pedoman Kepakaran Dosen masih draft, perlu disahkan."],
-  ["AK-07","Pedoman PMB dan Akses Mahasiswa","Pedomannya ada, belum dilengkapi SK."],
-  ["AK-10","Bukti Layanan Bersih dan Profesional","Sudah ada 4 dokumen parsial (Pakta Integritas, Komitmen Bersama, Publikasi Website, Pencanangan) &mdash; tinggal dirangkai jadi satu bukti utuh."]
+{ label: "Tier 3 &mdash; draft/bahan sudah ada, tinggal dilengkapi/disahkan", items: [
+  ["PKM-02","Pedoman Pengabdian kepada Masyarakat","Kemungkinan besar isinya sudah ada digabung dalam “Panduan Penelitian dan Pengabdian Masyarakat ISBI TP 2026” (RL-02) &mdash; tinggal dipisah/dirujuk, bukan ditulis dari nol."],
+  ["AK-07","Pedoman PMB dan Akses Mahasiswa","Pedomannya sudah ada, belum dilengkapi SK."],
+  ["RP-02","SK Penetapan Kurikulum","Kurikulum 2026 sudah berjalan dan dipakai (RP-01 Divalidasi) &mdash; SK Penetapan resmi dari pimpinan yang spesifik ke kurikulum ini kemungkinan tinggal diminta/ditelusuri, bukan disusun dari nol."],
+  ["DM-01","Dokumen Penetapan Visi Keilmuan dan Tujuan Prodi","Draf visi keilmuan &amp; visi-misi-tujuan Prodi sudah tertulis di dokumen RIP Bidang Pendidikan (staged ke DM-02, 2026-09-11) &mdash; tinggal diformalkan jadi SK Penetapan tersendiri."]
 ]},
-{ label: "Tier 4 &mdash; belum ada dokumennya sendiri, tapi ada template dari kode sekluster yang sudah Lengkap", items: [
-  ["PKM-01","Rencana Induk/Peta Jalan PkM","Kosong, tapi RL-01 (RIP Penelitian versi prodi) sudah lengkap strukturnya (Bab I-VIII) &mdash; tinggal adaptasi formatnya ke PkM. PKM-03/04/06/07/08 juga sudah Lengkap, jadi format pelaporan cluster PkM ini sudah mapan."],
-  ["PKM-02","Pedoman Pengabdian kepada Masyarakat","Kosong sebagai dokumen berdiri sendiri, tapi kemungkinan besar isinya sudah ada digabung dalam “Panduan Penelitian dan Pengabdian Masyarakat ISBI TP 2026” (RL-02) &mdash; tinggal dipisah/dirujuk, bukan ditulis dari nol."],
-  ["PKM-05","Matriks Integrasi PkM ke Mata Kuliah","Kosong &mdash; RL-04 (versi Penelitian) juga kosong jadi gak ada contoh langsung, tapi struktur tabelnya bisa nyontek matriks CPL/mata kuliah yang sudah ada di RP-15."]
+{ label: "Tier 4 &mdash; butuh kerja substantif ringan, masih internal prodi", items: [
+  ["PEN-03","Berita Acara Validasi Data LED-LKPS","Perlu rapat validasi data beneran antara prodi, jurusan, operator PD Dikti/SIAKAD, dan LPMPP &mdash; internal, bisa dijadwalkan sendiri."],
+  ["PKM-05","Matriks Integrasi PkM ke Mata Kuliah","Sekarang sudah ada 2 laporan PkM riil (PKM-07: SD YPK Kwadeware, SD Negeri Nimbokrang I) sebagai bahan nyata buat dipetakan ke mata kuliah &mdash; sebelumnya gak ada contoh sama sekali, sekarang tinggal disusun matriksnya."],
+  ["DM-04","Laporan Evaluasi Ketercapaian Tujuan Prodi","DM-05 (Benchmarking) sudah Terkumpul, bisa jadi bahan pembanding &mdash; masih perlu DM-01 (tujuan prodi) diformalkan dulu sebagai acuan evaluasi."]
 ]},
-{ label: "Tier 5 &mdash; butuh pihak eksternal/data dari luar prodi", items: [
-  ["AK-04","Bukti Kepemimpinan Operasional, Organisasional, Publik","PK Rektor perlu disiapkan dari tim SAKIP &mdash; di luar kendali prodi."],
-  ["AK-06","Dokumen Layanan Mahasiswa","Data belum tersedia dari UPPS."],
-  ["RL-07","Bukti Sistem Informasi/Dokumentasi Penelitian","Belum punya repository resmi yang disahkan &mdash; butuh setup sistem, bukan cuma tulis dokumen."]
+{ label: "Tier 5 &mdash; butuh pihak eksternal/institusi", items: [
+  ["PEN-04","Daftar Hadir/Notulen Pelibatan Pemangku Kepentingan","Perlu FGD/rapat yang benar-benar melibatkan alumni, mitra, dan pengguna lulusan (pihak eksternal), bukan cuma internal prodi."],
+  ["BM-10","Laporan Implementasi SPMI dan Validasi PD Dikti","Domain LPMPP/BAAK tingkat institut, bukan kendali langsung prodi."],
+  ["AK-03","Bukti Pengelolaan Data Akademik Berbasis TIK","Domain TIK/BAAK institut."],
+  ["AK-06","Dokumen Layanan Mahasiswa","Data belum tersedia dari UPPS &mdash; nunggu pihak luar prodi."],
+  ["DM-03","Laporan Program Pengembangan sesuai Renstra","Prasyaratnya DM-02 (Renstra) harus final/disahkan dulu sebagai acuan &mdash; sequential dependency, DM-02 masih Terkumpul belum Divalidasi."]
 ]},
-{ label: "Tier 6 &mdash; kosong total, belum ada arah atau contoh sama sekali", items: [
+{ label: "Tier 6 &mdash; kosong total / kerja substantif berat dari nol", items: [
   ["RL-04","Matriks Integrasi Penelitian ke Mata Kuliah","Belum pernah dilakukan integrasinya secara nyata &mdash; perlu kerja substantif dulu, baru bisa didokumentasikan."],
-  ["PEN-04","Daftar Hadir/Notulen Pelibatan Pemangku Kepentingan",""],
-  ["BM-06","Form/Matriks PPEPP Program Studi",""],
-  ["BM-10","Laporan Implementasi SPMI dan Validasi PD Dikti",""],
-  ["AK-03","Bukti Pengelolaan Data Akademik Berbasis TIK","Perlu disiapkan terlebih dahulu."],
-  ["AK-08","Kebijakan Suasana Akademik","Pedomannya belum ada."],
-  ["AK-09","Laporan Survei Kepuasan Tata Pamong dan Layanan",""],
-  ["AK-12","Matriks Identifikasi dan Mitigasi Risiko Prodi","Data belum tersedia."],
-  ["DM-01","Dokumen Penetapan Visi Keilmuan dan Tujuan Prodi","Data belum tersedia."],
-  ["DM-04","Laporan Evaluasi Ketercapaian Tujuan Prodi","Data belum tersedia."],
-  ["DM-05","Dokumen Benchmarking Program Studi","Data belum tersedia."]
+  ["RL-07","Bukti Sistem Informasi/Dokumentasi Penelitian","Belum punya repository resmi yang disahkan &mdash; butuh setup sistem, bukan cuma tulis dokumen."],
+  ["AK-08","Kebijakan Suasana Akademik","Pedomannya belum ada, perlu dirumuskan dari nol sebagai kebijakan resmi."],
+  ["AK-12","Matriks Identifikasi dan Mitigasi Risiko Prodi","Perlu risk assessment dari nol, melibatkan LPMPP."],
+  ["SUP-01","Matriks Kesesuaian LED-LKPS-Bukti","Dokumen holistik lintas LED-LKPS-bukti &mdash; realistis baru bisa disusun setelah LED hampir final, bukan sekarang."],
+  ["SUP-03","Formulir Validasi LKPS","Prasyaratnya angka-angka LKPS harus final dulu &mdash; sequential dependency ke tahap akhir penyusunan LKPS."]
 ]}
 ];
 
 document.getElementById("summary").innerHTML = `
   <div class="stat done"><b>33</b>Divalidasi</div>
-  <div class="stat partial"><b>10</b>Ada Perlu Perbaikan</div>
-  <div class="stat empty"><b>19</b>Belum Ada</div>
-  <div class="stat info"><b>10</b>Ada di checklist, belum ketemu di Drive</div>`;
+  <div class="stat partial"><b>11</b>Terkumpul</div>
+  <div class="stat empty"><b>26</b>Belum Mulai</div>
+  <div class="stat info"><b>47%</b>Selesai (Divalidasi)</div>`;
 
 const vg = document.getElementById("validatedGrid");
 VALIDATED.forEach(([kode,nama])=>{
   const d = document.createElement("div");
   d.innerHTML = `<b>${kode}</b>${nama}`;
   vg.appendChild(d);
+});
+
+const tg = document.getElementById("terkumpulGrid");
+TERKUMPUL.forEach(([kode,nama])=>{
+  const d = document.createElement("div");
+  d.innerHTML = `<b>${kode}</b>${nama}`;
+  tg.appendChild(d);
 });
 
 const tiersEl = document.getElementById("tiers");
@@ -252,7 +288,7 @@ TIERS.forEach((tier, ti)=>{
 const heldRows = document.getElementById("heldRows");
 HELD.forEach(([kode,nama,status,ket])=>{
   const tr = document.createElement("tr");
-  const badgeClass = status.startsWith("Divalidasi") ? "partial" : "empty";
+  const badgeClass = status.startsWith("Divalidasi") ? "done" : "partial";
   tr.innerHTML = `<td class="kode">${kode}</td><td>${nama}</td><td><span class="badge ${badgeClass}">${status}</span></td><td class="note">${ket}</td>`;
   heldRows.appendChild(tr);
 });
