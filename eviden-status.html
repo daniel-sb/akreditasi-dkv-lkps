@@ -64,15 +64,15 @@
 <div class="wrap">
   <nav class="top"><a href="index.html">&larr; Checklist LKPS</a></nav>
   <h1>Status Eviden - DKV ISBI Tanah Papua</h1>
-  <p class="sub">70 kode eviden BAN-PT IAPS 5.1 &middot; sumber: sheet <i>Monitoring Eviden DKV 2026 (Solo - No PIC)</i>, dibaca langsung 2026-09-11 &middot; daftar "checklist bilang Ada" dari <code>Daftar Periksa Bukti Akreditasi Prodi DKV.xlsx</code>, cross-check 2026-09-03 (belum diverifikasi ulang)</p>
+  <p class="sub">70 kode eviden BAN-PT IAPS 5.1 &middot; sumber: sheet <i>Monitoring Eviden DKV 2026 (Solo - No PIC)</i>, dibaca langsung 2026-09-11 &middot; daftar "checklist bilang Ada" dari <code>Daftar Periksa Bukti Akreditasi Prodi DKV.xlsx</code>, cross-check 2026-09-03 (belum diverifikasi ulang) &middot; file-tracking terbaru s/d 2026-09-22</p>
 
   <div class="summary" id="summary"></div>
   <div class="card" style="margin-top:4px">
     <p class="note" style="margin:0">
-      <b>Ringkasan per 2026-09-11:</b> 33 Divalidasi &middot; 11 Terkumpul &middot; 26 Belum Mulai &middot; 0 Proses &mdash; <b>47% selesai</b>.
+      <b>Angka Sheet per 2026-09-11</b> (terakhir dibaca langsung): 33 Divalidasi &middot; 11 Terkumpul &middot; 26 Belum Mulai &middot; 0 Proses &mdash; <b>47% selesai</b>. Belum di-refresh lagi sejak itu &mdash; angka di bawah bisa lebih rendah dari kondisi Drive sebenarnya.
       Dua kode yang sempat kosong total (<b>BM-06</b>, <b>PKM-07</b>) sudah naik status sejak batch WA-folder 2026-09-08.
-      <b>PKM-01</b> baru saja diisi (2026-09-11, dokumen RIPkM sudah di Drive) tapi Sheet belum sempat di-sync &mdash; begitu Daniel jalanin <code>syncFolderToSheet</code>, ini kandidat paling siap buat pindah dari Belum Mulai.
-      Ranking 26 kode yang masih Belum Mulai, diurut dari paling gampang, ada di bawah.
+      Dua kode lagi siap pindah begitu Daniel jalanin <code>syncFolderToSheet</code>: <b>PKM-01</b> (RIPkM di-upload 2026-09-11) dan <b>AK-07</b> (Pedoman PMB di-upload 2026-09-22, kode ini sebelumnya foldernya di Drive belum ada sama sekali).
+      Ranking kode yang masih Belum Mulai, diurut dari paling gampang, ada di bawah.
     </p>
   </div>
 
@@ -111,13 +111,23 @@
     <details style="margin-top:12px">
       <summary>Ditemukan tapi SENGAJA belum dikasih kode (institusi-level, gak cocok jelas ke definisi 70-kode)</summary>
       <p class="note" style="margin:6px 0 0">
-        <b>LAKIN ISBI TP 2020/2021/2022/2023 + Lakin 2025</b> &mdash; laporan kinerja tahunan pemerintah, level institut. Kandidat terdekat AK-04 (Bukti Kepemimpinan Operasional) tapi bukan match judul persis, dan ranah AK itu bukan domain Daniel.<br>
+        <s><b>LAKIN ISBI TP 2020/2021/2022/2023 + Lakin 2025</b></s> &mdash; <b>update 2026-09-22:</b> sudah di-assign ke <b>AK-04</b> di Drive (oleh Daniel/"opencode", di luar sesi ini), baris ini disimpan cuma buat riwayat.<br>
         <b>CALK Audited 2023/2024/2025</b> (Catatan atas Laporan Keuangan diaudit) &mdash; laporan keuangan institut diaudit; tidak ada kode di daftar 70 yang minta laporan keuangan diaudit penuh (RP-09 minta rekap biaya operasional program-level, beda level/scope).<br>
         <b>Laporan SIEVO.pdf</b> &mdash; "Laporan Evaluasi Organisasi ISBI Tanah Papua 2021", lama dan institut-wide, relevansi ke DKV belum jelas.<br>
         <b>File kurikulum lama</b> (SK Rektor 005/ISBI-TP/SK/2019) &mdash; superseded, RP-01 yang sudah distage headernya "TAHUN 2026", kurikulum baru sudah benar dipakai, file lama ini tidak dibutuhkan.<br>
         <b>Pedoman Teknis Pelaporan &amp; Verifikasi SPMI Perguruan Tinggi 2026</b> &mdash; referensi nasional generik, bukan dokumen DKV/institusi spesifik.
       </p>
     </details>
+    <p class="note" style="margin:16px 0 10px"><b>Batch 2026-09-22</b> &mdash; cek ulang folder Drive sumber mentah 11 hari kemudian (1084&rarr;1158 file). 20 genuinely baru di-push.</p>
+    <table>
+      <thead><tr><th style="width:70px">Kode</th><th>File</th><th>Catatan</th></tr></thead>
+      <tbody>
+        <tr><td class="kode">AK-07</td><td>Pedoman Penerimaan Mahasiswa Baru ISBI Tanah Papua</td><td class="note"><b>Beneran kosong total</b> &mdash; folder kode ini di Drive bahkan belum pernah dibikin. Dibikin baru, diisi.</td></tr>
+        <tr><td class="kode">BM-08</td><td>Siklus AMI 2025 lengkap, 11 file bernomor (Undangan s.d. Berita Acara Pelaksanaan Audit, termasuk Laporan AMI 2025 utama 18 halaman)</td><td class="note">Supplement &mdash; dicek isi, ini audit mutu internal 2025, beda dari BM-09 (RTM).</td></tr>
+        <tr><td class="kode">PKM-07</td><td>8 laporan PkM baru: SMKN 5 &amp; SMKN 8 Kota Jayapura, Politeknik ATI Makassar, Yayasan Rumah Komik, MBKM ke IDB Bali</td><td class="note">Supplement.</td></tr>
+      </tbody>
+    </table>
+    <p class="note" style="margin:14px 0 0"><b>&#9888;&#65039; Near-miss 2026-09-22 (bukti aturan 09-10 kepake):</b> 26 file MoA/kerjasama (AK-04 + DM-06) yang udah disiapin buat diupload ternyata SEMUA sudah ada di Drive &mdash; <b>DM-06 khususnya sudah punya arsip lengkap seluruh folder kerjasama Drive</b> (semua tahun/partner). Ketauan lewat <code>rclone lsl</code> (cek ukuran file) <b>sebelum</b> upload kali ini &mdash; gak jadi kekirim dobel, beda dari insiden 09-10 yang ketauan sesudahnya.</p>
   </div>
 
   <h2>&#9989; Sudah divalidasi (33)</h2>
@@ -154,7 +164,7 @@
     </table>
   </div>
 
-  <footer>Sheet dibaca langsung 2026-09-11; daftar checklist prodi dari cross-check 2026-09-03. Bukan pengganti verifikasi resmi asesor.</footer>
+  <footer>Sheet dibaca langsung 2026-09-11; file-tracking Drive terbaru 2026-09-22; daftar checklist prodi dari cross-check 2026-09-03. Bukan pengganti verifikasi resmi asesor.</footer>
 </div>
 
 <script>
@@ -207,7 +217,8 @@ const MISSING_SYNC = [
 
 const TIERS = [
 { label: "Tier 0 &mdash; sudah beres, tinggal nunggu sync", items: [
-  ["PKM-01","Rencana Induk/Peta Jalan PkM","Dokumen RIPkM (turunan Buku 3 Suplemen Standar Mutu PkM) sudah dibuat dan di-upload ke Drive tracker 2026-09-11. Sheet masih baca Belum Mulai karena <code>syncFolderToSheet</code> belum dijalanin &mdash; begitu di-run, ini otomatis pindah status, zero kerjaan tersisa."]
+  ["PKM-01","Rencana Induk/Peta Jalan PkM","Dokumen RIPkM (turunan Buku 3 Suplemen Standar Mutu PkM) sudah dibuat dan di-upload ke Drive tracker 2026-09-11. Sheet masih baca Belum Mulai karena <code>syncFolderToSheet</code> belum dijalanin &mdash; begitu di-run, ini otomatis pindah status, zero kerjaan tersisa."],
+  ["AK-07","Pedoman PMB dan Akses Mahasiswa","Pedoman Penerimaan Mahasiswa Baru (11 halaman, institut-level) di-upload ke Drive tracker 2026-09-22 &mdash; folder kode ini sebelumnya belum ada sama sekali. Sama kayak PKM-01, tinggal nunggu <code>syncFolderToSheet</code>."]
 ]},
 { label: "Tier 1 &mdash; datanya sudah ada di suatu tempat, tinggal upload/rangkai", items: [
   ["RL-08","Rekap Sumber dan Realisasi Dana Penelitian","Laporan keuangannya sudah ada, cuma belum diunggah ke Drive."],
@@ -222,7 +233,6 @@ const TIERS = [
 ]},
 { label: "Tier 3 &mdash; draft/bahan sudah ada, tinggal dilengkapi/disahkan", items: [
   ["PKM-02","Pedoman Pengabdian kepada Masyarakat","Kemungkinan besar isinya sudah ada digabung dalam “Panduan Penelitian dan Pengabdian Masyarakat ISBI TP 2026” (RL-02) &mdash; tinggal dipisah/dirujuk, bukan ditulis dari nol."],
-  ["AK-07","Pedoman PMB dan Akses Mahasiswa","Pedomannya sudah ada, belum dilengkapi SK."],
   ["RP-02","SK Penetapan Kurikulum","Kurikulum 2026 sudah berjalan dan dipakai (RP-01 Divalidasi) &mdash; SK Penetapan resmi dari pimpinan yang spesifik ke kurikulum ini kemungkinan tinggal diminta/ditelusuri, bukan disusun dari nol."],
   ["DM-01","Dokumen Penetapan Visi Keilmuan dan Tujuan Prodi","Draf visi keilmuan &amp; visi-misi-tujuan Prodi sudah tertulis di dokumen RIP Bidang Pendidikan (staged ke DM-02, 2026-09-11) &mdash; tinggal diformalkan jadi SK Penetapan tersendiri."]
 ]},
